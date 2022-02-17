@@ -5,10 +5,87 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Polling Day Widget</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        .polling-day-widget{
+            border: 1px solid #ccc;
+            width: 300px;
+            /* max-width: 300px; */
+            /* width: 100%; */
+            margin: 0 auto;
+            box-sizing: border-box;
+            padding: 15px 15px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .polling-day-widget h2{
+            font-size: 14px;
+            text-transform: uppercase;
+            margin: 0 0 15px 0;
+        }
+        .polling-day-widget .turnout_chart{
+            display: flex;
+            column-gap: 10px;
+            height: 18px;
+            margin-bottom: 15px;
+        }
+        .turnout_chart:last-child{
+            margin-bottom: 0;
+        }
+        
+        .polling-day-widget .turnout_chart p{
+            margin: 0; font-size: 14px;
+            width: 12%;
+        }
+        .polling-day-widget .pdw_progressbar{
+            background-color: #ccc;
+            width: 88%;
+            height: 18px;
+            margin-bottom: 20px;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        .polling-day-widget .pdw_innerbar{
+            background-color: orange;
+            height: 18px;
+            width: 0%;
+            transition: all 1s;
+            font-size: 12px;
+            line-height: 18px;
+            text-align: right;
+            padding: 1px 5px;
+            box-sizing: border-box;
+            font-weight: bold;
+            color: #fff;
+        }
+        .turnout_chart:last-child .pdw_innerbar{
+            background-color: #666;
+        }
+        .updated-time{ font-size:10px; margin:5px 0 0 0;}
+    </style>
 </head>
 <body>
     <div class="polling-day-widget">
-        <h2>Assembly Election 2022: Phase <span id="phaseNo"></span></h2>
+        <h2>Assembly Election 2022: <small>Phase <span id="phaseNo"></span></small></h2>
+
+        <div class="turnout_chart">
+            <p>2022</p>
+            <div class="pdw_progressbar">
+                <div class="pdw_innerbar" id="progressbar_2022"></div>
+            </div>
+        </div>
+        
+        <div class="turnout_chart">
+            <p>2017</p>
+            <div class="pdw_progressbar">
+                <div class="pdw_innerbar" id="progressbar_2017"></div>
+            </div>
+        </div>
+
+        <p class="updated-time"><b>updated:</b> <span>9.00am</span></p>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -30,6 +107,12 @@
         })();
         console.log(data);
         document.getElementById("phaseNo").innerHTML = data.phase;
+        var progress_2022 = document.getElementById("progressbar_2022");
+        progress_2022.style.width = data["turnout2022"]+"%";
+        progress_2022.innerHTML = data["turnout2022"];
+        var progress_2017 = document.getElementById("progressbar_2017");
+        progress_2017.style.width = data["turnout2017"]+"%";
+        progress_2017.innerHTML = data["turnout2017"];
     </script> 
 </body>
 </html>
