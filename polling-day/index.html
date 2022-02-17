@@ -85,7 +85,7 @@
             </div>
         </div>
 
-        <p class="updated-time"><b>updated:</b> <span>9.00am</span></p>
+        <p class="updated-time"><b>updated:</b> <span id="updatetime"></span></p>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -113,6 +113,8 @@
         var progress_2017 = document.getElementById("progressbar_2017");
         progress_2017.style.width = data["turnout2017"]+"%";
         progress_2017.innerHTML = data["turnout2017"];
+        var updateTime = document.getElementById("updatetime");
+        updateTime.innerHTML = data["updatedTime"];
     </script> 
 </body>
 </html>
