@@ -7,6 +7,29 @@
     <title>Polling Day Widget</title>
 </head>
 <body>
-    
+    <div class="polling-day-widget">
+        <h2>Assembly Election 2022: Phase <span id="phaseNo"></span></h2>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        var url = "https://script.google.com/macros/s/AKfycbz2Eu4ZAVkVoB4SfiKHcUml28_9tKXTIkhnlFPbqo1qheDnI1qxgz9YetaZAxupxYPu/exec";
+        var data = (function () {
+            data = null;
+            jQuery.ajax({
+                'async': false,
+                'global': false,
+                'dataType': 'json',
+                'cache': false,
+                'url': url,
+                'success': function (inputData) {
+                    data = inputData;
+                }
+            });
+            return data;
+        })();
+        console.log(data);
+        document.getElementById("phaseNo").innerHTML = data.phase;
+    </script> 
 </body>
 </html>
