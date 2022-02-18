@@ -28,15 +28,23 @@
             font-family: 'Montserrat', sans-serif;
         }
         .polling-day-widget h2{
-            font-size: 14px;
+            font-size: 15px;
+            text-transform: uppercase;
+            margin: 0 0 2px 0;
+            text-align: center;
+        }
+        .polling-day-widget p.desc{
+            font-size: 12px;
             text-transform: uppercase;
             margin: 0 0 15px 0;
+            text-align: center;
+            color: #888; font-weight: 600;
         }
         .polling-day-widget .turnout_chart{
             display: flex;
             column-gap: 10px;
             height: 18px;
-            margin-bottom: 15px;
+            margin:0 25px 15px 25px;
         }
         .turnout_chart:last-child{
             margin-bottom: 0;
@@ -67,21 +75,32 @@
             font-weight: bold;
             color: #fff;
         }
+        #progressbar_2017.pdw_innerbar{
+            background-color: #000;
+        }
         .turnout_chart:last-child .pdw_innerbar{
             background-color: #666;
         }
-        .updated-time{ font-size:10px; margin:5px 0 0 30px;}
+        .updated-time{ font-size:10px; margin:5px 0 0 0;
+        text-align: center;}
         .swiper-slide{
             border: 1px solid #ccc;
         }
 
         .swiper-button-prev, .swiper-button-next{
             position: absolute;
-            top: 120px;
+            top: 75px;
+        }
+        .swiper-button-prev{
+            left: 5px;
+        }
+        
+        .swiper-button-next{
+            right: 5px;
         }
 
         .swiper-button-next:after, .swiper-button-prev:after{
-            font-size: 24px; color:#000;
+            font-size: 28px; color:#000;
         }
 
         /* .turnoutSwiper, .swiper-slide{
@@ -159,20 +178,21 @@
             var fdData = data[slides[i]]
 
             var html = '<div class="polling-day-widget">'
-            html += '<h2>' + fdData['state'] +': <small>Phase <span id="phaseNo">' + fdData['phase'] +'</span></small></h2>'
+            html += '<h2>' + fdData['state'] +'</h2>'
+            html += '<p class="desc">Phase ' + fdData['phase'] +' Voter Turnout</small></p>'
             html += '<div class="turnout_chart">'
             html += '<p>2022</p>'
             html += '<div class="pdw_progressbar">'
-            html += '<div class="pdw_innerbar" id="progressbar_2022_'+slides[i]+'" style="width:' + fdData["turnout2022"] +'%">' + fdData["turnout2022"] +'</div>'
+            html += '<div class="pdw_innerbar" id="progressbar_2022" style="width:' + fdData["turnout2022"] +'%">' + fdData["turnout2022"] +'%</div>'
             html += '</div>'
             html += '</div>'
             html += '<div class="turnout_chart">'
-            html += '<p>2017</p>'
+            html += '<p>2017*</p>'
             html += '<div class="pdw_progressbar">'
-            html += '<div class="pdw_innerbar" id="progressbar_2017_' + slides[i] +'" style="width:' + fdData["turnout2017"] +'%">' + fdData["turnout2017"] +'</div>'
+            html += '<div class="pdw_innerbar" id="progressbar_2017" style="width:' + fdData["turnout2017"] +'%">' + fdData["turnout2017"] +'%</div>'
             html += '</div>'
             html += '</div>'
-            html += '<p class="updated-time"><b>Updated:</b> <span id="updatetime">' + fdData["updatedTime"] +'</span></p>'
+            html += '<p class="updated-time"><b>Updated:</b> <span id="updatetime">' + fdData["updatedTime"] +'</span> | * Overall Turnout</p>'
             html += '</div>';
             var div = document.createElement("div");
             div.className = "swiper-slide";
@@ -190,7 +210,6 @@
         // updateTime.innerHTML = data["updatedTime"];
          var swiper = new Swiper(".turnoutSwiper", {
                 slidesPerView: 1,
-                spaceBetween: 30,
                 navigation: {
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',
