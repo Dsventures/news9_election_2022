@@ -123,8 +123,8 @@
         <div class="swiper-pagination"></div>
     
         <!-- If we need navigation buttons -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev arrow-nav"></div>
+        <div class="swiper-button-next arrow-nav"></div>
     
         <!-- If we need scrollbar -->
         <div class="swiper-scrollbar"></div>
@@ -169,9 +169,28 @@
             });
             return data;
         })();
-        console.log(Object.keys(data));
+        
+        // var data = {
+        //         up:
+        //         {
+        //             phase: 'III',
+        //             state: 'Uttar Pradesh',
+        //             turnout2017: 30,
+        //             turnout2022: 70,
+        //             updatedTime: '9.00am'
+        //         }
+        //     };
+
+        // console.log(Object.keys(data));
         var slides = Object.keys(data);
         var sliderContainer = document.getElementsByClassName("swiper-wrapper")
+
+        var arrowNav = document.getElementsByClassName("arrow-nav");
+        if(slides.length === 1){
+            for(var j=0; j< arrowNav.length; j++){
+                arrowNav[j].style.display = "none";
+            } 
+        }
 
 
         for (var i = 0; i < slides.length; i++) {
