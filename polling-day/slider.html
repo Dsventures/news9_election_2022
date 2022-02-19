@@ -148,43 +148,93 @@
 
         <p class="updated-time"><b>updated:</b> <span id="updatetime"></span></p>
     </div> -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
         
-        var url = "https://script.google.com/macros/s/AKfycbyjBzoKbg4jro8PXTPc7R2cR_tH4sUh67xH-_mo-A-P_IRRiZV8Gi7jDh0qeeLEovlt/exec";
+        var url = "https://d2pq3f5u8vaaqw.cloudfront.net/election/uttar-pradesh/turnoutwidget?language=en&statecode=24&year=2022";
+        // var url = "https://script.google.com/macros/s/AKfycbyjBzoKbg4jro8PXTPc7R2cR_tH4sUh67xH-_mo-A-P_IRRiZV8Gi7jDh0qeeLEovlt/exec";
         // var url = "https://script.google.com/macros/s/AKfycbz2Eu4ZAVkVoB4SfiKHcUml28_9tKXTIkhnlFPbqo1qheDnI1qxgz9YetaZAxupxYPu/exec";
-        var data = (function () {
-            data = null;
-            jQuery.ajax({
-                'async': false,
-                'global': false,
-                'dataType': 'json',
-                'cache': false,
-                'url': url,
-                'success': function (inputData) {
-                    data = inputData;
-                }
-            });
-            return data;
-        })();
-        
-        // var data = {
-        //         up:
-        //         {
-        //             phase: 'III',
-        //             state: 'Uttar Pradesh',
-        //             turnout2017: 30,
-        //             turnout2022: 70,
-        //             updatedTime: '9.00am'
+        // var data = (function () {
+        //     data = null;
+        //     jQuery.ajax({
+        //         'async': false,
+        //         'global': false,
+        //         'dataType': 'json',
+        //         'cache': false,
+        //         'url': url,
+        //         'success': function (inputData) {
+        //             console.log(inputData)
+        //             data = inputData;
         //         }
-        //     };
+        //     });
+        //     return data;
+        // })();
 
-        // console.log(Object.keys(data));
-        var slides = Object.keys(data);
+        var data2 = (function () {
+                data2 = null;
+                jQuery.ajax({
+                    type: 'GET',
+                    'async': true,
+                    'global': false,
+                    contentType: "application/json; charset=utf-8",
+                    'dataType': 'json',
+                    'cache': false,
+                    'url': url,
+                    'success': function (inputData) {
+                        console.log(inputData)
+                    }
+                });
+                return data2;
+            })();
+
+        console.log(data2);
+
+        // $.ajax({
+        //         type: "GET",
+        //         url: url,
+                
+        //         dataType: "json",
+        //         success: function (data) {
+        //             alert(data.d);
+        //         },
+        //         error: function (data) {
+        //             alert("fail");
+        //         }
+        //     });
+
+        var data = {
+                "data": [
+                    {
+                        "statecode": "05",
+                        "statename": "Goa",
+                        "turnout2017": "30.2",
+                        "turnout2022": "40.2",
+                        "updatedat": "2022-02-19 13:23:35.6052"
+                    },
+                    {
+                        "statecode": "14",
+                        "statename": "Manipur",
+                        "turnout2017": "65.4",
+                        "turnout2022": "70.1",
+                        "updatedat": "2022-02-19 13:43:29.684049"
+                    },
+                    {
+                        "statecode": "24",
+                        "statename": "Uttar Pradesh",
+                        "turnout2017": "40.5",
+                        "turnout2022": "50.1",
+                        "updatedat": "2022-02-19 13:56:27.471195"
+                    }
+                ]
+            };
+
+        console.log(data["data"]);
+        
+        var slides = data["data"].length;
         var sliderContainer = document.getElementsByClassName("swiper-wrapper")
-
+        console.log(slides);
+        // if single item hide navigation
         var arrowNav = document.getElementsByClassName("arrow-nav");
         if(slides.length === 1){
             for(var j=0; j< arrowNav.length; j++){
@@ -192,13 +242,14 @@
             } 
         }
 
-
-        for (var i = 0; i < slides.length; i++) {
-            var fdData = data[slides[i]]
+        // // Create HTML slides based on Data
+        for (var i = 0; i < slides; i++) {
+            var fdData = data["data"][i]
+            console.log(fdData);
 
             var html = '<div class="polling-day-widget">'
-            html += '<h2>' + fdData['state'] +'</h2>'
-            html += '<p class="desc">Phase ' + fdData['phase'] +' Voter Turnout</small></p>'
+            html += '<h2>' + fdData['statename'] +'</h2>'
+            html += '<p class="desc">Phase III Voter Turnout</small></p>'
             html += '<div class="turnout_chart">'
             html += '<p>2022</p>'
             html += '<div class="pdw_progressbar">'
@@ -218,27 +269,20 @@
             div.innerHTML = html;
             sliderContainer[0].appendChild(div);
         }
-        // document.getElementById("phaseNo").innerHTML = data.phase;
-        // var progress_2022 = document.getElementById("progressbar_2022");
-        // progress_2022.style.width = data["turnout2022"]+"%";
-        // progress_2022.innerHTML = data["turnout2022"];
-        // var progress_2017 = document.getElementById("progressbar_2017");
-        // progress_2017.style.width = data["turnout2017"]+"%";
-        // progress_2017.innerHTML = data["turnout2017"];
-        // var updateTime = document.getElementById("updatetime");
-        // updateTime.innerHTML = data["updatedTime"];
-         var swiper = new Swiper(".turnoutSwiper", {
-                slidesPerView: 1,
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-                // autoplay: {
-                //     delay: 2500,
-                //     disableOnInteraction: false,
-                // },
-                loop: false,
-            });
+        
+        // Initiate Carousel
+        var swiper = new Swiper(".turnoutSwiper", {
+            slidesPerView: 1,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            // autoplay: {
+            //     delay: 2500,
+            //     disableOnInteraction: false,
+            // },
+            loop: false,
+        });
     </script> 
 </body>
 </html>
