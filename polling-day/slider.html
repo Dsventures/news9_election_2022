@@ -152,7 +152,8 @@
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
         
-        var url = "https://d2pq3f5u8vaaqw.cloudfront.net/election/uttar-pradesh/turnoutwidget?language=en&statecode=24&year=2022";
+        var url = "https://us7x1q8qyh.execute-api.ap-south-1.amazonaws.com/election/uttar-pradesh/turnoutwidget?language=en&statecode=24&year=2022";
+        // var url = "https://d2pq3f5u8vaaqw.cloudfront.net/election/uttar-pradesh/turnoutwidget?language=en&statecode=24&year=2022";
         // var url = "https://script.google.com/macros/s/AKfycbyjBzoKbg4jro8PXTPc7R2cR_tH4sUh67xH-_mo-A-P_IRRiZV8Gi7jDh0qeeLEovlt/exec";
         // var url = "https://script.google.com/macros/s/AKfycbz2Eu4ZAVkVoB4SfiKHcUml28_9tKXTIkhnlFPbqo1qheDnI1qxgz9YetaZAxupxYPu/exec";
         // var data = (function () {
@@ -175,14 +176,16 @@
                 data2 = null;
                 jQuery.ajax({
                     type: 'GET',
-                    'async': true,
+                    'async': false,
                     'global': false,
                     contentType: "application/json; charset=utf-8",
-                    'dataType': 'json',
+                    cors: true,
+                    'dataType': 'jsonp',
                     'cache': false,
                     'url': url,
                     'success': function (inputData) {
-                        console.log(inputData)
+                        console.log("success")
+                        data2 = inputData;
                     }
                 });
                 return data2;
@@ -245,7 +248,8 @@
         // // Create HTML slides based on Data
         for (var i = 0; i < slides; i++) {
             var fdData = data["data"][i]
-            console.log(fdData);
+            var time = fdData['updatedat'];
+            console.log(time);
 
             var html = '<div class="polling-day-widget">'
             html += '<h2>' + fdData['statename'] +'</h2>'
@@ -262,7 +266,7 @@
             html += '<div class="pdw_innerbar" id="progressbar_2017" style="width:' + fdData["turnout2017"] +'%">' + fdData["turnout2017"] +'%</div>'
             html += '</div>'
             html += '</div>'
-            html += '<p class="updated-time"><b>Updated:</b> <span id="updatetime">' + fdData["updatedTime"] +'</span> | * Overall Turnout</p>'
+            html += '<p class="updated-time"><b>Updated:</b> <span id="updatetime">' + fdData["updatedat"] +'</span> | * Overall Turnout</p>'
             html += '</div>';
             var div = document.createElement("div");
             div.className = "swiper-slide";
