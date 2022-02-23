@@ -1,0 +1,306 @@
+* {
+  font-family: "Georama", sans-serif;
+}
+.tv9-interactives {
+  text-align: center;
+  padding: 0px 15px;
+}
+.tv9-interactives .row {
+  text-align: center;
+  margin-bottom: 15px;
+}
+.tv9-interactives .title {
+  font-size: 22px;
+  margin: 0 0 15px 0;
+}
+.tv9-interactives .desc {
+  font-size: 13px;
+  line-height: 16px;
+}
+
+#caste-selector {
+  background-color: #d3def8;
+  width: 130px;
+  border: none;
+  padding: 2px 8px;
+}
+.influence {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.row hr {
+  border: 1px dotted #000;
+  margin: 15px auto 0 auto;
+  width: 20%;
+}
+#error {
+  color: red;
+  display: block;
+  margin-bottom: 15px;
+}
+
+#chosenCaste,
+#chosenCasteSeats {
+  display: inline-block;
+  background-color: #e8e8e8;
+  font-weight: 600;
+  line-height: 16px;
+}
+#chosenCaste {
+  min-width: 68px;
+}
+#chosenCasteSeats {
+  min-width: 28px;
+}
+.slidersection,
+.row {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.slidecontainer {
+  width: 95%;
+  text-align: center;
+  margin: 0 auto 25px auto;
+}
+.slidecontainer p {
+  font-size: 12px;
+  margin: 0 0 10px 0;
+  line-height: 12px;
+}
+
+.slidecontent {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 2.5%;
+  margin-left: -2%;
+}
+
+.slidecontainer span.min {
+  /* width: 1%; */
+  flex: 1;
+}
+.slidecontainer div.slideblock {
+  width: 90%;
+  position: relative;
+}
+span.value {
+  position: absolute;
+  top: 20px;
+  flex: 1;
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: -4px;
+  opacity: 0;
+}
+span.dfault-arrow {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 2px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  overflow: hidden;
+  background-color: #000;
+  width: 1px;
+  height: 1px;
+  z-index: -1;
+  opacity: 0;
+  transition: all 0.5s;
+}
+span.dfault-val {
+  position: absolute;
+  top: -7px;
+  margin-left: -8px;
+  padding-bottom: 2px;
+  opacity: 0;
+  left: 0;
+  transition: all 0.5s;
+  font-size: 11px;
+  font-weight: bold;
+  background-color: #fff;
+  z-index: 2;
+  line-height: 12px;
+}
+/* span.line-left, span.line-right{
+            position: absolute;
+            display: inline-block;
+            width: 1px;
+            height: 20px;
+            border-left: 2px solid #000;
+            top: 0;
+        }
+        span.line-left{
+            left:0;
+        } */
+span.line-right {
+  /* right:-4px; */
+  left: 100%;
+}
+.slidecontainer span.max {
+  width: 4%;
+}
+
+/* .slidecontainer div.slideblock{
+            width: 94%;
+            display: inline-block;
+        } */
+/* sliderFun("bjp", "#F47216")
+            sliderFun("sp", "#ff0000")
+            sliderFun("bsp", "#36A9E1")
+            sliderFun("congress", "#3AAA35")
+            sliderFun("others", "#797979") */
+
+/* THUMB of the Slider */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  /* visibility: hidden; */
+  /* display: none; */
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: rgb(137, 230, 137);
+  border: 5px solid #000;
+  margin-top: 0;
+  z-index: 5;
+}
+
+.slidecontainer#rangeBJP input[type="range"]::-webkit-slider-thumb {
+  background: #fff;
+  border: 5px solid #ff9800;
+}
+
+.slidecontainer#rangeSP input[type="range"]::-webkit-slider-thumb {
+  background: #fff;
+  border: 5px solid #f44336;
+}
+
+.slidecontainer#rangeBSP input[type="range"]::-webkit-slider-thumb {
+  background: #fff;
+  border: 5px solid #36a9e1;
+}
+
+.slidecontainer#rangeCongress input[type="range"]::-webkit-slider-thumb {
+  background: #fff;
+  border: 5px solid #3aaa35;
+}
+
+.slidecontainer#rangeOthers input[type="range"]::-webkit-slider-thumb {
+  background: #fff;
+  border: 5px solid #797979;
+}
+
+.slidecontainer input[type="range"] {
+  -webkit-appearance: none;
+  background: linear-gradient(
+    to right,
+    #040 var(--value),
+    #0c0 0,
+    #0c0 var(--max),
+    #fdd 0
+  );
+  height: 5px;
+  width: 100%;
+}
+
+.slidecontainer#rangeBJP input[type="range"] {
+  -webkit-appearance: none;
+  background: linear-gradient(
+    to right,
+    #ff9800 var(--value),
+    #ffcc80 0,
+    #ffcc80 var(--max),
+    #fff3e0 0
+  );
+  /* height: 5px; */
+}
+
+.slidecontainer#rangeSP input[type="range"] {
+  -webkit-appearance: none;
+  background: linear-gradient(
+    to right,
+    #f44336 var(--value),
+    #ef9a9a 0,
+    #ef9a9a var(--max),
+    #ffebee 0
+  );
+  /* height: 5px; */
+}
+.slidecontainer#rangeBSP input[type="range"] {
+  -webkit-appearance: none;
+  background: linear-gradient(
+    to right,
+    #2196f3 var(--value),
+    #90caf9 0,
+    #90caf9 var(--max),
+    #e3f2fd 0
+  );
+  /* height: 5px; */
+}
+.slidecontainer#rangeOthers input[type="range"] {
+  -webkit-appearance: none;
+  background: linear-gradient(
+    to right,
+    #767573 var(--value),
+    #a8a59f 0,
+    #a8a59f var(--max),
+    #ddd 0
+  );
+  /* height: 5px; */
+}
+.slidecontainer#rangeCongress input[type="range"] {
+  -webkit-appearance: none;
+  background: linear-gradient(
+    to right,
+    #4caf50 var(--value),
+    #81c784 0,
+    #81c784 var(--max),
+    #e8f5e9 0
+  );
+  /* height: 5px; */
+}
+
+/* .slidecontainer input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 1px;
+            height: .8em;
+        } */
+
+/* .slidecontent{
+            display: grid;
+            grid-template-columns: 10% 80% 10%;
+        } */
+
+/* .slidecontainer input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 1px;
+            height: .8em;
+        } */
+@media (max-width: 767px) {
+  .flex-group select,
+  .flex-group .influence {
+    margin-bottom: 15px;
+  }
+}
+@media (min-width: 768px) {
+  .flex-group {
+    display: flex;
+    column-gap: 20px;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+}
+@media (min-width: 960px) {
+  /* .flex-group {
+    display: flex;
+    column-gap: 20px;
+    justify-content: center;
+    margin-bottom: 15px;
+  } */
+}

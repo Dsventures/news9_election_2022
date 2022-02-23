@@ -6,203 +6,123 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        .slidersection{
-            width: 100%;
-            max-width: 400px;
-            margin: 0 auto;
-        }
-        .slidecontainer{
-            width: 100%;
-        }
-
-        .slidecontent{
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            column-gap: 2.5%;
-        }
-
-        .slidecontainer span.min{
-            width: 1%;
-        }
-        .slidecontainer div.slideblock{
-            width: 90%;
-        }
-        .slidecontainer span.max{
-            width: 4%;
-        }
-        
-        /* .slidecontainer div.slideblock{
-            width: 94%;
-            display: inline-block;
-        } */
-        /* sliderFun("bjp", "#F47216")
-            sliderFun("sp", "#ff0000")
-            sliderFun("bsp", "#36A9E1")
-            sliderFun("congress", "#3AAA35")
-            sliderFun("others", "#797979") */
-        .slidecontainer input[type="range"] {
-            -webkit-appearance: none;
-            background: linear-gradient(to right, 
-                #040 var(--value), 
-                #0C0 0, 
-                #0C0 var(--max),
-                #FDD 0
-            );
-            height: 5px;
-            width: 100%;
-        }
-        
-        .slidecontainer#rangeBJP input[type="range"] {
-            -webkit-appearance: none;
-            background: linear-gradient(to right, 
-                #ff9800 var(--value), 
-                #ffcc80 0, 
-                #ffcc80 var(--max),
-                #fff3e0 0
-            );
-            /* height: 5px; */
-        }
-        .slidecontainer#rangeSP input[type="range"] {
-            -webkit-appearance: none;
-            background: linear-gradient(to right, 
-                #f44336 var(--value), 
-                #ef9a9a 0, 
-                #ef9a9a var(--max),
-                #ffebee 0
-            );
-            /* height: 5px; */
-        }
-        .slidecontainer#rangeBSP input[type="range"] {
-            -webkit-appearance: none;
-            background: linear-gradient(to right, 
-                #2196f3 var(--value), 
-                #90caf9 0, 
-                #90caf9 var(--max),
-                #e3f2fd 0
-            );
-            /* height: 5px; */
-        }
-        .slidecontainer#rangeOthers input[type="range"] {
-            -webkit-appearance: none;
-            background: linear-gradient(to right, 
-                #767573 var(--value), 
-                #A8A59F 0, 
-                #A8A59F var(--max),
-                #ddd 0
-            );
-            /* height: 5px; */
-        }
-        .slidecontainer#rangeCongress input[type="range"] {
-            -webkit-appearance: none;
-            background: linear-gradient(to right, 
-                #4caf50 var(--value), 
-                #81c784 0, 
-                #81c784 var(--max),
-                #e8f5e9 0
-            );
-            /* height: 5px; */
-        }
-
-        /* .slidecontainer input[type="range"]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            width: 1px;
-            height: .8em;
-        } */
-
-        /* THUMB of the Slider */
-        .slidecontainer > input[type=range]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            border: none;
-            height: 16px;
-            width: 16px;
-            border-radius: 50%;
-            background: rgb(137, 230, 137);
-            border: 5px solid #ccc;
-            margin-top: 0;
-        }
-
-        
-        /* .slidecontent{
-            display: grid;
-            grid-template-columns: 10% 80% 10%;
-        } */
-
-
-        /* .slidecontainer input[type="range"]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            width: 1px;
-            height: .8em;
-        } */
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Georama:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" />
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="caste-equation.css">
 </head>
 <body>
     <div>Counter: <span id="counter"></span></div>
-    
-    <section class="slidersection">
-        <div class="slidecontainer" id="rangeBJP">
-            <p>One <span class="value">0%</span></p>
-            <div class="slidecontent">
-                <span class="min">0</span>
-                <div class="slideblock">
-                    <input type="range" class="slider" value="0" min="0" max="100">
-                </div>
-                <span class="max">100%</span>
-            </div>
-        </div>
-        
-        <div class="slidecontainer" id="rangeSP">
-            <p>Two <span class="value">0%</span></p>
-            <div class="slidecontent">
-                <span class="min">0</span>
-                <div class="slideblock">
-                    <input type="range" class="slider" value="0" min="0" max="100">
-                </div>
-                <span class="max">100%</span>
-            </div>
-        </div>
-        
-        <div class="slidecontainer" id="rangeBSP">
-            <p>Three <span class="value">0%</span></p>
-            <div class="slidecontent">
-                <span class="min">0</span>
-                <div class="slideblock">
-                    <input type="range" class="slider" value="0" min="0" max="100">
-                </div>
-                <span class="max">100%</span>
-            </div>
-        </div>
-        
-        <div class="slidecontainer" id="rangeCongress">
-            <p>Four <span class="value">0%</span></p>
-            <div class="slidecontent">
-                <span class="min">0</span>
-                <div class="slideblock">
-                    <input type="range" class="slider" value="0" min="0" max="100">
-                </div>
-                <span class="max">100%</span>
-            </div>
-        </div>
-        
-        <div class="slidecontainer" id="rangeOthers">
-            <p>Five <span class="value">0%</span></p>
-            <div class="slidecontent">
-                <span class="min">0</span>
-                <div class="slideblock">
-                    <input type="range" class="slider" value="0" min="0" max="100">
-                </div>
-                <span class="max">100%</span>
-            </div>
-        </div>
-    </section>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-        const inputs = [...document.querySelectorAll(".slidecontainer input")];
+    <div class="tv9-interactives">
+        <div class="row">
+            <h1 class="title">UP 2022: THE NUMBERS GAME</h1>
+            <p class="desc">This widget lets you play pollster! Select a caste group from the drop-down box below. You will be presented with how many seats that group influences in UP and vote-share of the community based on political party (in the 2017 polls). Now move the slider to fix possible vote-share scenarios and hit “submit”. The pop-up box will tell you how many seats each party wins in 2022 based on your inputs.</p>
+        </div>
+        <div class="flex-group">
+            <select id="caste-selector">
+                <option value="choose">Choose caste</option>
+                <option value="Jat">Jat</option>
+                <option value="Gurjar">Gurjar</option>
+                <option value="Rajput">Rajput</option>
+                <option value="Bramhin">Bramhin</option>
+                <option value="Yadav">Yadav</option>
+                <option value="Kurmi">Kurmi</option>
+                <option value="Kushwaha">Kushwaha</option>
+                <option value="Nishad">Nishad</option>
+                <option value="Rajbhar">Rajbhar</option>
+                <option value="Vaishya">Vaishya</option>
+            </select>
+            <p class="influence"><span id="chosenCaste">&nbsp;&nbsp;&nbsp;&nbsp;</span> influence <span id="chosenCasteSeats">&nbsp;&nbsp;&nbsp;&nbsp;</span> seats
+                in UP
+            </p>
+        </div>
+        <section class="slidersection">
+            <div class="slidecontainer" id="rangeBJP">
+                <p>BJP voteshare in 2017</p>
+                <div class="slidecontent">
+                    <span class="min">0</span>
+                    <div class="slideblock">
+                        <span class="dfault-arrow"></span>
+                        <span class="dfault-val">0%</span>
+                        <input type="range" class="slider" data-party="BJP" value="0" min="0" max="100">
+                        <span class="value">0%</span>
+                    </div>
+                    <span class="max">100%</span>
+                </div>
+            </div>
+        
+            <div class="slidecontainer" id="rangeSP">
+                <p>SP voteshare in 2017</p>
+                <div class="slidecontent">
+                    <span class="min">0</span>
+                    <div class="slideblock">
+                        <span class="value">0%</span>
+                        <span class="dfault-arrow"></span>
+                        <span class="dfault-val">0%</span>
+                        <input type="range" class="slider" data-party="SP" value="0" min="0" max="100">
+                    </div>
+                    <span class="max">100%</span>
+                </div>
+            </div>
+        
+            <div class="slidecontainer" id="rangeBSP">
+                <p>BSP voteshare in 2017</p>
+                <div class="slidecontent">
+                    <span class="min">0</span>
+                    <div class="slideblock">
+                        <span class="value">0%</span>
+                        <span class="dfault-arrow"></span>
+                        <span class="dfault-val">0%</span>
+                        <input type="range" class="slider" data-party="BSP" value="0" min="0" max="100">
+                    </div>
+                    <span class="max">100%</span>
+                </div>
+            </div>
+        
+            <div class="slidecontainer" id="rangeCongress">
+                <p>Congress voteshare in 2017</p>
+                <div class="slidecontent">
+                    <span class="min">0</span>
+                    <div class="slideblock">
+                        <span class="value">0%</span>
+                        <span class="dfault-arrow"></span>
+                        <span class="dfault-val">0%</span>
+                        <input type="range" class="slider" value="0" data-party="Congress" min="0" max="100">
+                    </div>
+                    <span class="max">100%</span>
+                </div>
+            </div>
+        
+            <div class="slidecontainer" id="rangeOthers">
+                <p>Others voteshare in 2017</p>
+                <div class="slidecontent">
+                    <span class="min">0</span>
+                    <div class="slideblock">
+                        <span class="value">0%</span>
+                        <span class="dfault-arrow"></span>
+                        <span class="dfault-val">0%</span>
+                        <input type="range" class="slider" value="0" data-party="Others" min="0" max="100">
+                    </div>
+                    <span class="max">100%</span>
+                </div>
+            </div>
+        </section>
+        <span id="error"></span>
+        <button id="submit">Submit</button>
+    </div>
 
-            for (let input of inputs) {
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <!-- <script>
+        var inputs = [...document.querySelectorAll(".slidecontainer input")];
+        // var inputs2 = document.querySelectorAll(".slidecontainer input");
+
+            // console.log(inputs2, typeof(inputs2));
+
+            for (var input of inputs) {
                 input.addEventListener("input", update);
             }
 
@@ -214,18 +134,22 @@
                     e.target.value = e.target.dataset.max;
                 }
 
-                let sumOfAllInputs = inputs.reduce((sum, input) => sum + input.valueAsNumber, 0);
+                var sumOfAllInputs = inputs.reduce((sum, input) => sum + input.valueAsNumber, 0);
 
                 document.querySelector("#counter").textContent = 100 - sumOfAllInputs + "%";
 
-                for (let input of inputs) {
+                for (var input of inputs) {
                     //const sumOfOtherInputs = sumOfAllInputs - input.valueAsNumber; 
-                    //const max = 100 - sumOfOtherInputs;
-                    // or short:
                     const max = 100 + input.valueAsNumber - sumOfAllInputs;
                     const container = input.closest(".slidecontainer");
-                    container.querySelector(".max").textContent = input.dataset.max = max;
+
+                    container.querySelector(".max").textContent = 100;
+                    // container.querySelector(".max").textContent = max;
+                    input.dataset.max = max;
+
+                    container.querySelector(".line-right").style.left = max + "%";
                     container.querySelector(".value").textContent = input.valueAsNumber + "%";
+                    container.querySelector(".value").style.left = input.valueAsNumber + "%";
 
                     // set the break-points for the background to visualize the range
                     input.style.setProperty("--value", input.valueAsNumber + "%");
@@ -233,6 +157,6 @@
                 }
             }
 
-    </script>
+    </script> -->
 </body>
 </html>
