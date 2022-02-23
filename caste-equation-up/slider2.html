@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .slidersection{
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .slidecontainer{
+            width: 100%;
+        }
+
+        .slidecontent{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 2.5%;
+        }
+
+        .slidecontainer span.min{
+            width: 1%;
+        }
+        .slidecontainer div.slideblock{
+            width: 90%;
+        }
+        .slidecontainer span.max{
+            width: 4%;
+        }
+        
+        /* .slidecontainer div.slideblock{
+            width: 94%;
+            display: inline-block;
+        } */
+        /* sliderFun("bjp", "#F47216")
+            sliderFun("sp", "#ff0000")
+            sliderFun("bsp", "#36A9E1")
+            sliderFun("congress", "#3AAA35")
+            sliderFun("others", "#797979") */
+        .slidecontainer input[type="range"] {
+            -webkit-appearance: none;
+            background: linear-gradient(to right, 
+                #040 var(--value), 
+                #0C0 0, 
+                #0C0 var(--max),
+                #FDD 0
+            );
+            height: 5px;
+            width: 100%;
+        }
+        
+        .slidecontainer#rangeBJP input[type="range"] {
+            -webkit-appearance: none;
+            background: linear-gradient(to right, 
+                #ff9800 var(--value), 
+                #ffcc80 0, 
+                #ffcc80 var(--max),
+                #fff3e0 0
+            );
+            /* height: 5px; */
+        }
+        .slidecontainer#rangeSP input[type="range"] {
+            -webkit-appearance: none;
+            background: linear-gradient(to right, 
+                #f44336 var(--value), 
+                #ef9a9a 0, 
+                #ef9a9a var(--max),
+                #ffebee 0
+            );
+            /* height: 5px; */
+        }
+        .slidecontainer#rangeBSP input[type="range"] {
+            -webkit-appearance: none;
+            background: linear-gradient(to right, 
+                #2196f3 var(--value), 
+                #90caf9 0, 
+                #90caf9 var(--max),
+                #e3f2fd 0
+            );
+            /* height: 5px; */
+        }
+        .slidecontainer#rangeOthers input[type="range"] {
+            -webkit-appearance: none;
+            background: linear-gradient(to right, 
+                #767573 var(--value), 
+                #A8A59F 0, 
+                #A8A59F var(--max),
+                #ddd 0
+            );
+            /* height: 5px; */
+        }
+        .slidecontainer#rangeCongress input[type="range"] {
+            -webkit-appearance: none;
+            background: linear-gradient(to right, 
+                #4caf50 var(--value), 
+                #81c784 0, 
+                #81c784 var(--max),
+                #e8f5e9 0
+            );
+            /* height: 5px; */
+        }
+
+        /* .slidecontainer input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 1px;
+            height: .8em;
+        } */
+
+        /* THUMB of the Slider */
+        .slidecontainer > input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            border: none;
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            background: rgb(137, 230, 137);
+            border: 5px solid #ccc;
+            margin-top: 0;
+        }
+
+        
+        /* .slidecontent{
+            display: grid;
+            grid-template-columns: 10% 80% 10%;
+        } */
+
+
+        /* .slidecontainer input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 1px;
+            height: .8em;
+        } */
+    </style>
+</head>
+<body>
+    <div>Counter: <span id="counter"></span></div>
+    
+    <section class="slidersection">
+        <div class="slidecontainer" id="rangeBJP">
+            <p>One <span class="value">0%</span></p>
+            <div class="slidecontent">
+                <span class="min">0</span>
+                <div class="slideblock">
+                    <input type="range" class="slider" value="0" min="0" max="100">
+                </div>
+                <span class="max">100%</span>
+            </div>
+        </div>
+        
+        <div class="slidecontainer" id="rangeSP">
+            <p>Two <span class="value">0%</span></p>
+            <div class="slidecontent">
+                <span class="min">0</span>
+                <div class="slideblock">
+                    <input type="range" class="slider" value="0" min="0" max="100">
+                </div>
+                <span class="max">100%</span>
+            </div>
+        </div>
+        
+        <div class="slidecontainer" id="rangeBSP">
+            <p>Three <span class="value">0%</span></p>
+            <div class="slidecontent">
+                <span class="min">0</span>
+                <div class="slideblock">
+                    <input type="range" class="slider" value="0" min="0" max="100">
+                </div>
+                <span class="max">100%</span>
+            </div>
+        </div>
+        
+        <div class="slidecontainer" id="rangeCongress">
+            <p>Four <span class="value">0%</span></p>
+            <div class="slidecontent">
+                <span class="min">0</span>
+                <div class="slideblock">
+                    <input type="range" class="slider" value="0" min="0" max="100">
+                </div>
+                <span class="max">100%</span>
+            </div>
+        </div>
+        
+        <div class="slidecontainer" id="rangeOthers">
+            <p>Five <span class="value">0%</span></p>
+            <div class="slidecontent">
+                <span class="min">0</span>
+                <div class="slideblock">
+                    <input type="range" class="slider" value="0" min="0" max="100">
+                </div>
+                <span class="max">100%</span>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        const inputs = [...document.querySelectorAll(".slidecontainer input")];
+
+            for (let input of inputs) {
+                input.addEventListener("input", update);
+            }
+
+            update();
+
+            function update(e) {
+                // cap the value to max
+                if (e && e.target.valueAsNumber > +e.target.dataset.max) {
+                    e.target.value = e.target.dataset.max;
+                }
+
+                let sumOfAllInputs = inputs.reduce((sum, input) => sum + input.valueAsNumber, 0);
+
+                document.querySelector("#counter").textContent = 100 - sumOfAllInputs + "%";
+
+                for (let input of inputs) {
+                    //const sumOfOtherInputs = sumOfAllInputs - input.valueAsNumber; 
+                    //const max = 100 - sumOfOtherInputs;
+                    // or short:
+                    const max = 100 + input.valueAsNumber - sumOfAllInputs;
+                    const container = input.closest(".slidecontainer");
+                    container.querySelector(".max").textContent = input.dataset.max = max;
+                    container.querySelector(".value").textContent = input.valueAsNumber + "%";
+
+                    // set the break-points for the background to visualize the range
+                    input.style.setProperty("--value", input.valueAsNumber + "%");
+                    input.style.setProperty("--max", max + "%");
+                }
+            }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .sliderblock{
+            position: relative;
+            width: fit-content;
+        }
+        .line-marker{
+            border-left: 2px solid red;
+            /* width: 10px; */
+            background-color: red;
+            height: 20px;
+            position: absolute;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div>Counter: <span id="counter"></span></div>
+    
+    <div class="slidecontainer">
+        
+        <p>One <span class="value"></span></p>
+        <span class="min"></span>
+        <div class="sliderblock">
+            <div class="line-marker"></div>
+            <input type="range" class="slider" value="78">
+        </div>
+        <span class="max"></span>
+    </div>
+    
+    <div class="slidecontainer">
+        
+        <p>Two <span class="value"></span></p>
+        <span class="min"></span>
+        <div class="sliderblock">
+            <div class="line-marker"></div>
+            <input type="range" class="slider" value="15">
+        </div>
+        <span class="max"></span>
+    </div>
+    
+    <div class="slidecontainer">
+        
+        <p>Three <span class="value"></span></p>
+        <span class="min"></span>
+        <div class="sliderblock">
+            <div class="line-marker"></div>
+            <input type="range" class="slider" value="2">
+        </div>
+        <span class="max"></span>
+    </div>
+    
+    <div class="slidecontainer">
+        
+        <p>Four <span class="value"></span></p>
+        <span class="min"></span>
+        <div class="sliderblock">
+            <div class="line-marker"></div>
+            <input type="range" class="slider" value="3">
+        </div>
+        <span class="max"></span>
+    </div>
+    
+    <div class="slidecontainer">
+        
+        <p>Five <span class="value"></span></p>
+        <span class="min"></span>
+        <div class="sliderblock">
+            <div class="line-marker"></div>
+            <input type="range" class="slider" value="1">
+        </div>
+        <span class="max"></span>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        var slider_indecies = ["myRangeOne", "myRangeTwo", "myRangeThree", "myRangeFour", "myRangeFive"];
+        var change_order = [];
+        var current_total_percentage = 0;
+        var sliderValTracker = [0, 0, 0, 0, 0]
+
+        const inputs = [...document.querySelectorAll(".slidecontainer input")];
+
+            for (let input of inputs) {
+                const container = input.closest(".slidecontainer");
+                input.addEventListener("input", update);
+                
+                $(".line-marker").css("left", 36+"%")
+
+                input.value = 0;
+                container.querySelector(".min").textContent = input.min = 0;
+                container.querySelector(".max").textContent = input.max = 100;
+                container.querySelector(".value").textContent = input.valueAsNumber + "%";
+            }
+            update();
+
+            function update() {
+
+                let sumOfAllInputs = inputs.reduce((sum, input) => sum + input.valueAsNumber, 0);
+
+                console.log(sumOfAllInputs);
+
+                let trackCount = 100 - sumOfAllInputs;
+
+                if(trackCount >= 0){
+
+                    document.querySelector("#counter").textContent = trackCount + "%";
+
+                    for (let input of inputs) {
+                        const max = 100 + input.valueAsNumber - sumOfAllInputs;
+                        const container = input.closest(".slidecontainer");
+                        // container.querySelector(".max").textContent = input.max = 100;
+                        container.querySelector(".max").textContent = 100;
+                        input.max = 100;
+                        // container.querySelector(".max").textContent = max;
+                        // input.max = max;
+                        // input.max = 100;
+                        container.querySelector(".line-marker").style.left = max + "%";
+                        // $(".line-marker").css("left", max + "%")
+                        container.querySelector(".value").textContent = input.valueAsNumber + "%";
+                        if (input.valueAsNumber >= max) {
+                            // event.preventDefault()
+                            // input.disabled = "disabled";
+                            console.log("stop");
+                            container.querySelector(".value").textContent = max + "%";
+                            input.value = max;
+                        }else{
+
+                        }
+                        
+                        // console.log(container);
+                    }
+
+                }
+
+                
+            }
+
+    </script>
+</body>
+</html>
