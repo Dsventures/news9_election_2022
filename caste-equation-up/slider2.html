@@ -25,25 +25,20 @@
                 </div>
                 <div id="methodology" style="display: none;">
                     <h2>Methodology</h2>
-                    <p>Eight filters have been used to calculate the winning probability of the candidate based on the
-                        combination of factors
-                        that a user selects.</p>
-                    <p>The projections are based on the overall voting pattern observed in Uttar Pradesh since the 2017
-                        assembly election. The data has been collated for ten “dominant” castes and their voting
-                        preferences. This is then built into the equation to present outcomes based on a user’s input. The
-                        factors used for the calculation include seat tally, dominant castes in each constituency, changing
-                        factor based on the voting of each caste, share of total votes, and percentage of voters of each
-                        caste in the state. The default values are based on the election results in the 2017 assembly polls.
-                        Further, changes in calculations and outcomes are based on the user input at the number of sliders.
-                        The consolidated result of all these parameters is the outcome (or “winning probability” of the
-                        candidate under chosen conditions.)</p>
-                    <p>These results do not claim the absolute victory but the possibility of victory in the number of
-                        constituencies based on selected parameters and the data.</p>
+                    <p>The projections are based on the overall voting pattern observed in Uttar Pradesh since the 2017 assembly election. The
+                    data has been collated for ten “dominant” castes and their voting preferences. This is then built into the equation to
+                    present outcomes based on a user’s input. The factors used for the calculation include seat tally, dominant castes in
+                    each constituency, changing factor based on the voting of each caste, share of total votes, and percentage of voters of
+                    each caste in the state. The default values are based on the election results in the 2017 assembly polls.</p>
+                    <p>Further, changes in calculations and outcomes are based on the user input at the number of sliders. The consolidated
+                    result of all these parameters is the outcome (or “winning probability” of the candidate under chosen conditions.)</p>
+                    <p>These results do not claim the absolute victory but the possibility of victory in the number of constituencies based on
+                    selected parameters and the data.</p>
                     <p style="border-top: 1px solid #000; margin: 10px auto 0 auto;width: 80%;padding-top: 10px;"><b>Concept and data modelling:</b> Partha Das, Akash Gulankar | <b>Development:</b> Eunice Elizabeth Dhivya | <b>Design:</b> Prathap
                     Ravishankar</p>
                 </div>
                 <div id="result" style="display: none;">
-                    <p style="font-weight: 600;text-decoration: underline;">Based on your inputs</p>
+                    <p style="font-weight: 600;">Based on your inputs</p>
                     <ul>
                         <li id="bjpstr"></li>
                         <li id="spstr"></li>
@@ -125,28 +120,32 @@
             <p class="desc">This widget lets you play pollster! Select a caste group from the drop-down box below. You will be presented with how many seats that group influences in UP and vote-share of the community based on political party (in the 2017 polls). Now move the slider to fix possible vote-share scenarios and hit "submit". The pop-up box will tell you how many seats each
             party wins in 2022 based on your inputs.</p>
         </div>
-        <div class="flex-group">
-            <select id="caste-selector">
-                <option value="choose">Choose caste</option>
-                <option value="Jat">Jat</option>
-                <option value="Gurjar">Gurjar</option>
-                <option value="Rajput">Rajput</option>
-                <option value="Bramhin">Bramhin</option>
-                <option value="Yadav">Yadav</option>
-                <option value="Kurmi">Kurmi</option>
-                <option value="Kushwaha">Kushwaha</option>
-                <option value="Nishad">Nishad</option>
-                <option value="Rajbhar">Rajbhar</option>
-                <option value="Vaishya">Vaishya</option>
-            </select>
-            <p class="influence"><span id="chosenCaste">&nbsp;&nbsp;&nbsp;&nbsp;</span> influence <span id="chosenCasteSeats">&nbsp;&nbsp;&nbsp;&nbsp;</span> seats
-                in UP
-            </p>
+        <div class="row">
+            <div class="flex-group">
+                <select id="caste-selector">
+                    <option value="choose">Choose caste</option>
+                    <option value="Jat">Jat</option>
+                    <option value="Gurjar">Gurjar</option>
+                    <option value="Rajput">Rajput</option>
+                    <option value="Brahmin">Brahmin</option>
+                    <option value="Yadav">Yadav</option>
+                    <option value="Kurmi">Kurmi</option>
+                    <option value="Kushwaha">Kushwaha</option>
+                    <option value="Nishad">Nishad</option>
+                    <option value="Rajbhar">Rajbhar</option>
+                    <option value="Vaishya">Vaishya</option>
+                </select>
+                <p class="influence" style="visibility:hidden;"><span id="chosenCaste">&nbsp;&nbsp;&nbsp;&nbsp;</span> influence <span
+                        id="chosenCasteSeats">&nbsp;&nbsp;&nbsp;&nbsp;</span> seats
+                    in UP
+                </p>
+            </div>
         </div>
         <section class="slidersection">
             <div class="slidecontainer" id="rangeBJP">
-                <p>BJP voteshare in 2017</p>
+                <!-- <p>BJP voteshare in 2017</p> -->
                 <div class="slidecontent">
+                    <span class="party">BJP</span>
                     <span class="min">0</span>
                     <div class="slideblock">
                         <span class="dfault-arrow"></span>
@@ -159,8 +158,9 @@
             </div>
         
             <div class="slidecontainer" id="rangeSP">
-                <p>SP voteshare in 2017</p>
+                <!-- <p>SP voteshare in 2017</p> -->
                 <div class="slidecontent">
+                    <span class="party">SP</span>
                     <span class="min">0</span>
                     <div class="slideblock">
                         <span class="value">0%</span>
@@ -173,8 +173,9 @@
             </div>
         
             <div class="slidecontainer" id="rangeBSP">
-                <p>BSP voteshare in 2017</p>
+                <!-- <p>BSP voteshare in 2017</p> -->
                 <div class="slidecontent">
+                    <span class="party">BSP</span>
                     <span class="min">0</span>
                     <div class="slideblock">
                         <span class="value">0%</span>
@@ -187,8 +188,9 @@
             </div>
         
             <div class="slidecontainer" id="rangeCongress">
-                <p>Congress voteshare in 2017</p>
+                <!-- <p>Congress voteshare in 2017</p> -->
                 <div class="slidecontent">
+                    <span class="party">Congress</span>
                     <span class="min">0</span>
                     <div class="slideblock">
                         <span class="value">0%</span>
@@ -201,8 +203,9 @@
             </div>
         
             <div class="slidecontainer" id="rangeOthers">
-                <p>Others voteshare in 2017</p>
+                <!-- <p>Others voteshare in 2017</p> -->
                 <div class="slidecontent">
+                    <span class="party">Others</span>
                     <span class="min">0</span>
                     <div class="slideblock">
                         <span class="value">0%</span>

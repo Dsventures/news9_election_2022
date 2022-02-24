@@ -57,16 +57,20 @@
 #chosenCasteSeats {
   min-width: 28px;
 }
-.slidersection,
+.slidersection {
+  width: 100%;
+  max-width: 600px;
+  margin: 10px auto;
+}
 .row {
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
 }
 .slidecontainer {
-  width: 95%;
+  width: 100%;
   text-align: center;
-  margin: 0 auto 25px auto;
+  margin: 0 auto 35px auto;
 }
 .slidecontainer p {
   font-size: 12px;
@@ -80,7 +84,7 @@
   justify-content: center;
   align-items: center;
   column-gap: 2.5%;
-  margin-left: -2%;
+  /* margin-left: -2%; */
 }
 
 .slidecontainer span.min {
@@ -98,12 +102,18 @@
   font-weight: 600;
 }
 .slidecontainer div.slideblock {
-  width: 90%;
+  width: 100%;
   position: relative;
 }
+span.party {
+  font-size: 12px;
+  font-weight: 600;
+  width: 15%;
+}
+
 span.value {
   position: absolute;
-  top: 20px;
+  top: -12px;
   flex: 1;
   font-size: 14px;
   font-weight: bold;
@@ -111,7 +121,7 @@ span.value {
   opacity: 0;
 }
 span.dfault-arrow {
-  position: absolute;
+  /* position: absolute;
   top: 5px;
   left: 0;
   border: solid black;
@@ -126,50 +136,67 @@ span.dfault-arrow {
   height: 1px;
   z-index: -1;
   opacity: 0;
+  transition: all 0.5s; */
+  position: absolute;
+  top: 14px;
+  left: 0;
+  border-left: 1px solid black;
+  /* border-width: 1px; */
+  display: inline-block;
+  padding: 0;
+  /* transform: rotate(45deg); */
+  /* -webkit-transform: rotate(45deg); */
+  overflow: hidden;
+  background-color: #000;
+  width: 1px;
+  height: 10px;
+  z-index: -1;
+  opacity: 0;
   transition: all 0.5s;
 }
 span.dfault-val {
   position: absolute;
-  top: -7px;
+  top: 25px;
   margin-left: -8px;
   padding-bottom: 2px;
   opacity: 0;
-  left: 0;
+  /* left: 0; */
   transition: all 0.5s;
   font-size: 11px;
   font-weight: bold;
   background-color: #fff;
   z-index: 2;
   line-height: 12px;
+  width: fit-content;
 }
-/* span.line-left, span.line-right{
-            position: absolute;
-            display: inline-block;
-            width: 1px;
-            height: 20px;
-            border-left: 2px solid #000;
-            top: 0;
-        }
-        span.line-left{
-            left:0;
-        } */
-span.line-right {
-  /* right:-4px; */
-  left: 100%;
-}
-/* .slidecontainer span.max {
-  width: 4%;
-} */
 
-/* .slidecontainer div.slideblock{
-            width: 94%;
-            display: inline-block;
-        } */
-/* sliderFun("bjp", "#F47216")
-            sliderFun("sp", "#ff0000")
-            sliderFun("bsp", "#36A9E1")
-            sliderFun("congress", "#3AAA35")
-            sliderFun("others", "#797979") */
+span.dfault-val.left::before {
+  color: #000;
+  position: absolute;
+  right: 35px;
+  content: "2017 vote share";
+  width: 78px;
+  text-align: left;
+  font-size: 9px;
+}
+span.dfault-val.right::after {
+  color: #000;
+  position: absolute;
+  left: 26px;
+  content: "2017 vote share";
+  width: 86px;
+  text-align: right;
+  font-size: 9px;
+}
+span.dfault-val.right-single::after {
+  color: #000;
+  position: absolute;
+  left: 20px;
+  content: "2017 vote share";
+  width: 86px;
+  text-align: right;
+  font-size: 9px;
+}
 
 /* THUMB of the Slider */
 input[type="range"]::-webkit-slider-thumb {
@@ -321,9 +348,13 @@ input[type="range"]::-webkit-slider-thumb {
 
 #methodology {
   width: 100%;
+  text-align: center;
 }
 #methodology h2 {
   margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
 }
 
 #methodology p {
@@ -476,27 +507,32 @@ input[type="range"]::-webkit-slider-thumb {
             sliderFun("others", "#797979") */
 #result #bjpstr span,
 #result #bjp h3,
-#rangeBJP span.value {
+#rangeBJP span.value,
+#rangeBJP span.party {
   color: #f47216;
 }
 #result #spstr span,
 #result #sp h3,
-#rangeSP span.value {
+#rangeSP span.value,
+#rangeSP span.party {
   color: #ff0000;
 }
 #result #bspstr span,
 #result #bsp h3,
-#rangeBSP span.value {
+#rangeBSP span.value,
+#rangeBSP span.party {
   color: #36a9e1;
 }
 #result #congressstr span,
 #result #congress h3,
-#rangeCongress span.value {
+#rangeCongress span.value,
+#rangeCongress span.party {
   color: #3aaa35;
 }
 #result #othersstr span,
 #result #others h3,
-#rangeOthers span.value {
+#rangeOthers span.value,
+#rangeOthers span.party {
   color: #797979;
 }
 #result .neutral p {
@@ -518,6 +554,7 @@ input[type="range"]::-webkit-slider-thumb {
   color: #000;
   margin-top: 10px;
 }
+
 .flex-group select,
 .flex-group .influence {
   margin-bottom: 15px;
@@ -531,6 +568,9 @@ input[type="range"]::-webkit-slider-thumb {
     justify-content: center;
     margin-bottom: 15px;
   } */
+  span.party {
+    width: 12%;
+  }
 }
 @media (min-width: 960px) {
   /* .flex-group {

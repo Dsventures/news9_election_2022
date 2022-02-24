@@ -30,7 +30,7 @@ for(var i=0; i<inputs.length; i++){
             blackOut.style.display = "block";
             modelBox.style.display = "block";
             errormsg.style.display = "block";
-            error.innerHTML = "Caste is required";
+            error.innerHTML = "Please select caste";
         }
     })
 }
@@ -111,6 +111,8 @@ casteSelector.addEventListener("change", function(e){
 
     // ======================================================
 
+    document.getElementsByClassName("influence")[0].style.visibility = "visible";
+
     var filterCasteRows = data.filter(function(obj){
         return obj.Caste === e.target.value;
     })
@@ -139,9 +141,17 @@ casteSelector.addEventListener("change", function(e){
         
         var chosenInputParty = filterPartyRows[0]["DefaultValues"]
 
+        console.log(parseFloat(chosenInputParty) < 50);
 
-        container.getElementsByClassName("dfault-val")[0].textContent = parseFloat(chosenInputParty).toFixed(1)+"%";
+        if(parseFloat(chosenInputParty).toFixed(1) > 50){
+            container.getElementsByClassName("dfault-val")[0].className = "dfault-val left";
+        }else if(parseFloat(chosenInputParty).toFixed(1) >= 10 && parseFloat(chosenInputParty).toFixed(1) < 50){
+          container.getElementsByClassName("dfault-val")[0].className = "dfault-val right";
+        }else{
+           container.getElementsByClassName("dfault-val")[0].className = "dfault-val right-single"; 
+        }
         container.getElementsByClassName("dfault-val")[0].style.opacity = 1;
+        container.getElementsByClassName("dfault-val")[0].innerHTML = parseFloat(chosenInputParty).toFixed(1)+"%";
         container.getElementsByClassName("dfault-val")[0].style.left = chosenInputParty+"%";
         container.getElementsByClassName("dfault-arrow")[0].style.left = chosenInputParty+"%";
         container.getElementsByClassName("dfault-arrow")[0].style.opacity = 1;
@@ -177,7 +187,7 @@ document.getElementById("submit").addEventListener("click", function(){
         blackOut.style.display = "block";
                 modelBox.style.display = "block";
                 errormsg.style.display = "block";
-                error.innerHTML = "Caste is required";
+                error.innerHTML = "Please select caste";
     }else{
         // var sumOfAllInputs = inputs.reduce((sum, input) => sum + input.valueAsNumber, 0);
 
@@ -300,6 +310,7 @@ function reset(e){
         document.getElementById("caste-selector").selectedIndex = 0;
     }
     error.innerHTML = "";
+    document.getElementsByClassName("influence")[0].style.visibility = "hidden";
     chosenCaste.innerHTML = "&nbsp;";
     chosenCasteSeats.innerHTML = "&nbsp;";
     for(var j=0; j<inputs.length; j++){
@@ -327,7 +338,7 @@ function reset(e){
                 blackOut.style.display = "block";
                 modelBox.style.display = "block";
                 errormsg.style.display = "block";
-                error.innerHTML = "Caste is required"
+                error.innerHTML = "Please select caste"
             }
         })
       
