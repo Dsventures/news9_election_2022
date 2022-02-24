@@ -266,22 +266,215 @@ input[type="range"]::-webkit-slider-thumb {
   /* height: 5px; */
 }
 
-/* .slidecontainer input[type="range"]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            width: 1px;
-            height: .8em;
-        } */
+/* Modal box */
+/* ============================================================== */
+.UPCasteEq_buttons button,
+#closeModel2 {
+  font-family: "Georama", sans-serif;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #000;
+  border: none;
+  outline: none;
+  padding: 5px 10px;
+}
 
-/* .slidecontent{
-            display: grid;
-            grid-template-columns: 10% 80% 10%;
-        } */
+.UPCasteEq_model {
+  position: absolute;
+  background-color: #ebebeb;
+  border-radius: 16px;
+  z-index: 1000;
+  padding: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* margin-top: -100px; */
+  width: 80%;
+}
 
-/* .slidecontainer input[type="range"]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            width: 1px;
-            height: .8em;
-        } */
+.UPCasteEq_model_blackout {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 16px;
+  z-index: 999;
+  padding: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* margin-top: -100px; */
+  width: 100%;
+  height: 100%;
+}
+
+#methodology {
+  width: 100%;
+}
+#methodology h2 {
+  margin-bottom: 15px;
+}
+
+#methodology p {
+  font-size: 12px;
+  line-height: 16px;
+  font-family: "Georama", sans-serif;
+  margin-bottom: 15px;
+}
+
+.dom-voters-text {
+  font-family: "Georama", sans-serif;
+  font-size: 12px;
+  line-height: 14px;
+  margin-top: 10px;
+  padding-top: 5px;
+  border-top: 1px solid #ccc;
+  display: block;
+}
+
+#closeModel {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #000;
+  color: #fff;
+  outline: none;
+  border: none;
+}
+
+.result_header,
+.result_header .div,
+.result_body {
+  display: flex;
+  justify-content: center;
+  column-gap: 10px;
+}
+.result_header .div span,
+.result_body #userPrediction,
+.result_body #modelPrediction {
+  display: block;
+}
+.result_body div:first-child {
+  color: #bf6c1e;
+}
+
+.result_body #userPrediction,
+.result_body #modelPrediction {
+  font-size: 28px;
+  font-weight: 700;
+}
+.result_body div:last-child {
+  color: #56b635;
+}
+.result_body {
+  margin-bottom: 15px;
+}
+.result_body div b {
+  font-size: 12px;
+  display: block;
+  line-height: 14px;
+  margin-bottom: 10px;
+}
+.result_header div b {
+  font-size: 12px;
+  display: block;
+  line-height: 14px;
+  margin-bottom: 5px;
+}
+
+.result_header {
+  margin: 10px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #000;
+}
+
+#result {
+  text-align: center;
+}
+
+#result ul li {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 16px;
+  margin: 0 0 10px 0;
+}
+#result p:nth-child(1) {
+  margin-bottom: 10px;
+}
+#result .result_body {
+  margin: 15px 0;
+}
+#result .seatsWrap {
+  border-top: 1px solid #000;
+  padding: 10px 0;
+  color: #000;
+  font-weight: 600;
+}
+.bjpstr,
+.spstr {
+  text-align: center;
+  font-size: 12px;
+}
+#result h3 {
+  font-size: 14px;
+  line-height: 18px;
+}
+#result p.precent {
+  color: #999;
+  font-weight: 700;
+  padding: 5px 0;
+  font-size: 14px;
+  line-height: 14px;
+}
+#result p.seats {
+  font-weight: 900;
+  font-size: 17px;
+  margin: 0;
+  line-height: 16px;
+}
+#result p.seats small {
+  font-size: 12px;
+  font-weight: 600;
+}
+#result p.changeinseats {
+  font-weight: 600;
+  font-size: 14px;
+}
+#result .lost p,
+#result .won p {
+  margin: 0;
+  text-transform: lowercase;
+  font-size: 14px;
+  line-height: 15px;
+}
+
+/* sliderFun("bjp", "#F47216")
+            sliderFun("sp", "#ff0000")
+            sliderFun("bsp", "#36A9E1")
+            sliderFun("congress", "#3AAA35")
+            sliderFun("others", "#797979") */
+#result #bjpstr span {
+  color: #f47216;
+}
+#result #spstr span {
+  color: #ff0000;
+}
+#result #bspstr span {
+  color: #36a9e1;
+}
+#result #congressstr span {
+  color: #3aaa35;
+}
+#result #othersstr sapn {
+  color: #797979;
+}
+#result .lost p {
+  color: red;
+}
+#result .won p {
+  color: green;
+}
 @media (max-width: 767px) {
   .flex-group select,
   .flex-group .influence {
