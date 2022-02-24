@@ -27,7 +27,10 @@ for(var i=0; i<inputs.length; i++){
     container.addEventListener("click", function(){
         var tempCasteVal = casteSelector.value;
         if(tempCasteVal === "choose"){
-            error.innerHTML = "Caste is required"
+            blackOut.style.display = "block";
+            modelBox.style.display = "block";
+            errormsg.style.display = "block";
+            error.innerHTML = "Caste is required";
         }
     })
 }
@@ -174,7 +177,7 @@ document.getElementById("submit").addEventListener("click", function(){
         blackOut.style.display = "block";
                 modelBox.style.display = "block";
                 errormsg.style.display = "block";
-                error.innerHTML = "Caste is required"
+                error.innerHTML = "Caste is required";
     }else{
         // var sumOfAllInputs = inputs.reduce((sum, input) => sum + input.valueAsNumber, 0);
 
