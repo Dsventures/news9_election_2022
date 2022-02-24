@@ -12,6 +12,33 @@ var methodology = document.getElementById("methodology");
 
 casteSelector.addEventListener("change", function(e){
     console.log(e.target.value);
+    // reset section
+    //  ===========================================
+
+    chosenCaste.innerHTML = "&nbsp;";
+    chosenCasteSeats.innerHTML = "&nbsp;";
+    for (var input of inputs) {
+        // console.log(input);
+        input.style.pointerEvents = "auto";
+        input.value = 0;
+        input.dataset.value = 0;
+        input.dataset.max = 100;
+        input.style.setProperty("--value", 0 + "%");
+        input.style.setProperty("--max", 100 + "%");
+        var container = input.closest(".slidecontainer");
+        container.querySelector(".dfault-val").textContent = 0+"%";
+        container.querySelector(".dfault-val").style.opacity = 0;
+        container.querySelector(".dfault-val").style.left = 0+"%";
+        container.querySelector(".dfault-arrow").style.left = 0+"%";
+        container.querySelector(".dfault-arrow").style.opacity = 0;
+        container.querySelector(".min").textContent = input.min = 0;
+        container.querySelector(".max").textContent = input.max = 100;
+        container.querySelector(".value").textContent = 0 + "%";
+        container.querySelector(".value").style.left = 0 + "%";  
+    
+    }
+
+    // ======================================================
 
     var filterCasteRows = data.filter(function(obj){
         return obj.Caste === e.target.value;
@@ -30,82 +57,34 @@ casteSelector.addEventListener("change", function(e){
     error.innerHTML = "";
                     
     for (var input of inputs) {
-        // console.log(input);
         input.style.pointerEvents = "auto";
-        const container = input.closest(".slidecontainer");
+        var container = input.closest(".slidecontainer");
         input.addEventListener("input", update);  
 
          var filterPartyRows = filterCasteRows.filter(function(obj){
-            // console.log(obj['Caste'].length, fdValue.length);
             return obj.Party === input.dataset.party;
         })
+        
+        var chosenInputParty = filterPartyRows[0]["DefaultValues"]
 
-        // console.log(input.dataset.party);
-        // console.log(filterPartyRows[0]["DefaultValues"]);
-        var chosenInputParty = filterPartyRows[0]["PercentageofVotes(2017)"]
 
-        // console.log(parseFloat(chosenInputParty).toFixed(1), typeof(chosenInputParty));
-
-        // input.value = 10;
         container.querySelector(".dfault-val").textContent = parseFloat(chosenInputParty).toFixed(1)+"%";
         container.querySelector(".dfault-val").style.opacity = 1;
         container.querySelector(".dfault-val").style.left = chosenInputParty+"%";
         container.querySelector(".dfault-arrow").style.left = chosenInputParty+"%";
         container.querySelector(".dfault-arrow").style.opacity = 1;
-        // container.querySelector(".min").textContent = input.min = 0;
-        // container.querySelector(".value").textContent = input.valueAsNumber + "%";
     }
 
     var sumOfAllInputs = inputs.reduce((sum, input) => sum + input.valueAsNumber, 0);
 
     document.querySelector("#counter").textContent = 100 - sumOfAllInputs + "%";
-
-    // console.log(fdData(e.target.value));
-    // selectedDataRows = fdData(e.target.value);
-    // var sumSeats2017 = selectedDataRows.map(function(obj){
-    //     return obj["TotalSeats2017"];
-    // }).reduce(function(a, b){
-    //     return parseInt(a) + parseInt(b);
-    // })
-    // var sumDefaults2017 = selectedDataRows.map(function(obj){
-    //     return obj["DefaultValues "];
-    // }).reduce(function(a, b){
-    //     return parseInt(a) + parseInt(b);
-    // })
-
-    // chosenCaste.innerHTML = e.target.value;
-    // chosenCasteSeats.innerHTML = sumSeats2017;
-
-    // // Populate slider with Default Values
-    // rangeBJP.value = fdDataParty(fdData(e.target.value), "BJP")
-    // rangeSP.value = fdDataParty(fdData(e.target.value), "SP")
-    // rangeBSP.value = fdDataParty(fdData(e.target.value), "BSP")
-    // rangeCongress.value = fdDataParty(fdData(e.target.value), "BSP")
-    // rangeOthers.value = fdDataParty(fdData(e.target.value), "BSP")
-
-
-    // countTracker[0] = rangeBJP.value;
-    // countTracker[1] = rangeSP.value;
-    // countTracker[2] = rangeBSP.value;
-    // countTracker[3] = rangeCongress.value;
-    // countTracker[4] = rangeOthers.value;
-
-
-    // // count = count - sumDefaults2017;
-    // countDisplay.innerHTML = countTracker.reduce(function(c1, c2){
-    //     return c1 + c2;
-    // });
     
 })
 
 
 
-        // var inputs2 = document.querySelectorAll(".slidecontainer input");
-
-            // console.log(inputs2, typeof(inputs2));
-
             for (var input of inputs) {
-                const container = input.closest(".slidecontainer");
+                var container = input.closest(".slidecontainer");
                 input.style.pointerEvents = "none";
                 container.style.cursor = "pointer";
                 input.addEventListener("input", update);
@@ -117,16 +96,6 @@ casteSelector.addEventListener("change", function(e){
                     }
                 })
 
-                // input.addEventListener("click", function(){
-                //     var tempCasteVal = casteSelector.value;
-                //     console.log(tempCasteVal);
-                //     if(tempCasteVal === "choose"){
-                //         error.innerHTML = "Caste is required"
-                //     }
-                // });
-                // input.value = 10;
-                // container.querySelector(".min").textContent = input.min = 0;
-                // container.querySelector(".value").textContent = input.valueAsNumber + "%";
             }
 
             update();
@@ -142,9 +111,8 @@ casteSelector.addEventListener("change", function(e){
                 document.querySelector("#counter").textContent = 100 - sumOfAllInputs + "%";
 
                 for (var input of inputs) {
-                    //const sumOfOtherInputs = sumOfAllInputs - input.valueAsNumber; 
-                    const max = 100 + input.valueAsNumber - sumOfAllInputs;
-                    const container = input.closest(".slidecontainer");
+                    var max = 100 + input.valueAsNumber - sumOfAllInputs;
+                    var container = input.closest(".slidecontainer");
 
                     container.querySelector(".max").textContent = 100;
                     // container.querySelector(".max").textContent = max;
@@ -177,7 +145,7 @@ document.getElementById("submit").addEventListener("click", function(){
 
             var tmpObject = {}
             for (var input of inputs) {
-                tmpObject[input.dataset.party] = parseInt(input.dataset.value);
+                tmpObject[input.dataset.party] = parseFloat(input.dataset.value);
             }
             
             
@@ -257,5 +225,42 @@ document.getElementById("closeModel2").addEventListener("click", function(){
     result.style.display = "none";
     methodology.style.display = "none";
 })
+document.getElementById("method").addEventListener("click", function(){
+    blackOut.style.display = "block";
+    modelBox.style.display = "block";
+    result.style.display = "none";
+    methodology.style.display = "block";
+})
+document.getElementById("reset").addEventListener("click", reset)
 
 
+function reset(e){
+    console.log("e.target.id", e.target.id);
+    if(e.target.id === "reset"){
+        document.getElementById("caste-selector").selectedIndex = 0;
+    }
+    error.innerHTML = "";
+    chosenCaste.innerHTML = "&nbsp;";
+    chosenCasteSeats.innerHTML = "&nbsp;";
+    for (var input of inputs) {
+        // console.log(input);
+        input.style.pointerEvents = "auto";
+        input.value = 0;
+        input.dataset.value = 0;
+        input.dataset.max = 100;
+        input.style.setProperty("--value", 0 + "%");
+        input.style.setProperty("--max", 100 + "%");
+        var container = input.closest(".slidecontainer");
+        container.querySelector(".dfault-val").textContent = 0+"%";
+        container.querySelector(".dfault-val").style.opacity = 0;
+        container.querySelector(".dfault-val").style.left = 0+"%";
+        container.querySelector(".dfault-arrow").style.left = 0+"%";
+        container.querySelector(".dfault-arrow").style.opacity = 0;
+        container.querySelector(".min").textContent = input.min = 0;
+        container.querySelector(".max").textContent = input.max = 100;
+        container.querySelector(".value").textContent = 0 + "%";
+        container.querySelector(".value").style.left = 0 + "%";  
+    
+    }
+
+}
