@@ -2,6 +2,7 @@ var casteSelector = document.getElementById("caste-selector");
 var chosenCaste = document.getElementById("chosenCaste");
 var chosenCasteSeats = document.getElementById("chosenCasteSeats");
 var error = document.getElementById("error");
+var errormsg = document.getElementById("errormessage");
 // var inputs = [...document.querySelectorAll(".slidecontainer input")];
 // var inputs = document.getElementsByClassName("slider");
 
@@ -115,7 +116,7 @@ casteSelector.addEventListener("change", function(e){
         return obj["Effect"];
     })
 
-    chosenCaste.innerHTML = e.target.value;
+    chosenCaste.innerHTML = e.target.value+"s";
     chosenCasteSeats.innerHTML = sumSeats2017[0];
    
 
@@ -170,7 +171,10 @@ document.getElementById("submit").addEventListener("click", function(){
     
     // console.log(tempCasteVal);
     if(tempCasteVal === "choose"){
-        error.innerHTML = "Caste is required"
+        blackOut.style.display = "block";
+                modelBox.style.display = "block";
+                errormsg.style.display = "block";
+                error.innerHTML = "Caste is required"
     }else{
         // var sumOfAllInputs = inputs.reduce((sum, input) => sum + input.valueAsNumber, 0);
 
@@ -188,8 +192,7 @@ document.getElementById("submit").addEventListener("click", function(){
         var sumOfAllInputs = getVale();
         // console.log(sumOfAllInputs);
         // console.log(inputs[0].dataset);
-        if(sumOfAllInputs !== 0){
-            error.innerHTML = "";
+        error.innerHTML = "";
 
             var tmpObject = {}
             for(rr=0; rr<inputs.length; rr++){
@@ -213,10 +216,6 @@ document.getElementById("submit").addEventListener("click", function(){
             // }
 
             formula(tmpObject, filterCasteRows);
-
-        }else{
-            error.innerHTML = "Make some choices";
-        }
     }
 }) // end of the submit event function
 
@@ -236,7 +235,17 @@ function formula(sliderInput, datapoints){
         var changefrom2017 = tmpChangeInSeats - parseInt(filterBasedParty[0]["2017Seats"])
         var finalOutput = changefrom2017 + parseInt(filterBasedParty[0]["TotalSeats2017"])
 
-        var wonlost = changefrom2017 < 0 ? "lost": "won";
+        var wonlost = "neutral";
+
+
+
+        if(changefrom2017 < 0){
+           wonlost = "lost";
+        }else if(changefrom2017 > 0){
+            wonlost = "won"; 
+            changefrom2017 = "+"+changefrom2017;
+        }
+        // var wonlost = changefrom2017 < 0 ? "lost": "won";
         // var negpos = changefrom2017 < 0 ? "-": "+";
 
         var str ="<span>"+ obj + "</span> will win <span>" + finalOutput + "</span> seats in 2022 <br><small>(2017 tally: "+filterBasedParty[0]["2017Seats"]+")</small>";
@@ -264,12 +273,14 @@ document.getElementById("closeModel").addEventListener("click", function(){
     modelBox.style.display = "none";
     result.style.display = "none";
     methodology.style.display = "none";
+    errormsg.style.display = "none";
 })
 document.getElementById("closeModel2").addEventListener("click", function(){
     blackOut.style.display = "none";
     modelBox.style.display = "none";
     result.style.display = "none";
     methodology.style.display = "none";
+    errormsg.style.display = "none";
 })
 document.getElementById("method").addEventListener("click", function(){
     blackOut.style.display = "block";
@@ -310,6 +321,9 @@ function reset(e){
         container.addEventListener("click", function(){
             var tempCasteVal = casteSelector.value;
             if(tempCasteVal === "choose"){
+                blackOut.style.display = "block";
+                modelBox.style.display = "block";
+                errormsg.style.display = "block";
                 error.innerHTML = "Caste is required"
             }
         })

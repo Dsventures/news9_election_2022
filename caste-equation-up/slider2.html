@@ -20,6 +20,9 @@
         <div class="UPCasteEq_model_inner">
             <button id="closeModel">X</button>
             <div class="UPCasteEq_model_content">
+                <div id="errormessage" style="display: none;">
+                    <span id="error"></span>
+                </div>
                 <div id="methodology" style="display: none;">
                     <h2>Methodology</h2>
                     <p>Eight filters have been used to calculate the winning probability of the candidate based on the
@@ -36,12 +39,11 @@
                         candidate under chosen conditions.)</p>
                     <p>These results do not claim the absolute victory but the possibility of victory in the number of
                         constituencies based on selected parameters and the data.</p>
-                    <p style="border-top: 1px solid #000; margin: 10px auto 0 auto;width: 80%;padding-top: 10px;"><b>Concept
-                            and data modelling:</b> Akash Gulankar, Partha Das, Varun Sharma | <b>Development:</b> Eunice
-                        Elizabeth Dhivya | <b>Design:</b> Prathap Ravishankar</p>
+                    <p style="border-top: 1px solid #000; margin: 10px auto 0 auto;width: 80%;padding-top: 10px;"><b>Concept and data modelling:</b> Partha Das, Akash Gulankar | <b>Development:</b> Eunice Elizabeth Dhivya | <b>Design:</b> Prathap
+                    Ravishankar</p>
                 </div>
                 <div id="result" style="display: none;">
-                    <p>Selected parameters</p>
+                    <p style="font-weight: 600;text-decoration: underline;">Based on your inputs</p>
                     <ul>
                         <li id="bjpstr"></li>
                         <li id="spstr"></li>
@@ -211,7 +213,7 @@
                 </div>
             </div>
         </section>
-        <span id="error"></span>
+        <!-- <span id="error"></span> -->
         <div class="UPCasteEq_buttons">
             <button id="submit">Submit</button>
             <button id="reset">Reset</button>
