@@ -173,28 +173,28 @@ span.dfault-val {
 span.dfault-val.left::before {
   color: #000;
   position: absolute;
-  right: 32px;
+  right: 40px;
   content: "2017 vote share";
   width: 78px;
-  text-align: left;
+  text-align: right;
   font-size: 9px;
 }
 span.dfault-val.right::after {
   color: #000;
   position: absolute;
-  left: 24px;
+  left: 40px;
   content: "2017 vote share";
   width: 86px;
-  text-align: right;
+  text-align: left;
   font-size: 9px;
 }
 span.dfault-val.right-single::after {
   color: #000;
   position: absolute;
-  left: 17px;
+  left: 32px;
   content: "2017 vote share";
-  width: 86px;
-  text-align: right;
+  width: 84px;
+  text-align: left;
   font-size: 9px;
 }
 
