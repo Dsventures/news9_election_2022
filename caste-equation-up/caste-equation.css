@@ -173,7 +173,7 @@ span.dfault-val {
 span.dfault-val.left::before {
   color: #000;
   position: absolute;
-  right: 40px;
+  right: 36px;
   content: "2017 vote share";
   width: 78px;
   text-align: right;
@@ -182,7 +182,7 @@ span.dfault-val.left::before {
 span.dfault-val.right::after {
   color: #000;
   position: absolute;
-  left: 40px;
+  left: 38px;
   content: "2017 vote share";
   width: 86px;
   text-align: left;
@@ -191,7 +191,7 @@ span.dfault-val.right::after {
 span.dfault-val.right-single::after {
   color: #000;
   position: absolute;
-  left: 32px;
+  left: 31px;
   content: "2017 vote share";
   width: 84px;
   text-align: left;
