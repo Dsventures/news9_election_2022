@@ -1,6 +1,11 @@
 * {
   font-family: "Georama", sans-serif;
 }
+body {
+  background-image: url("img/background.jpg");
+  background-size: auto;
+  background-repeat: repeat;
+}
 .tv9-interactives {
   text-align: center;
   padding: 0px 15px;
@@ -27,7 +32,7 @@
 }
 .influence {
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .row hr {
@@ -46,6 +51,11 @@
 
 #chosenCaste,
 #chosenCasteSeats {
+  font-weight: 700;
+}
+
+/* #chosenCaste,
+#chosenCasteSeats {
   display: inline-block;
   background-color: #e8e8e8;
   font-weight: 600;
@@ -56,7 +66,7 @@
 }
 #chosenCasteSeats {
   min-width: 28px;
-}
+} */
 .slidersection {
   width: 100%;
   max-width: 600px;
@@ -569,7 +579,7 @@ input[type="range"]::-webkit-slider-thumb {
     margin-bottom: 15px;
   } */
   span.party {
-    width: 12%;
+    width: 11%;
   }
 }
 @media (min-width: 960px) {
