@@ -83,6 +83,41 @@ function update(e) {
 
 casteSelector.addEventListener("change", function(e){
     console.log(e.target.value);
+
+    if(e.target.value === "choose"){
+
+        document.getElementsByClassName("influence")[0].style.visibility = "hidden";
+        
+        for(var j=0; j<inputs.length; j++){
+            inputs[j].style.pointerEvents = "auto";
+            var container = inputs[j].closest(".slidecontainer");
+            inputs[j].style.pointerEvents = "auto";
+            inputs[j].value = 0;
+            inputs[j].dataset.value = 0;
+            inputs[j].dataset.max = 100;
+            inputs[j].style.setProperty("--value", 0 + "%");
+            inputs[j].style.setProperty("--max", 100 + "%");
+            container.getElementsByClassName("dfault-val")[0].textContent = 0+"%";
+            container.getElementsByClassName("dfault-val")[0].style.opacity = 0;
+            container.getElementsByClassName("dfault-val")[0].style.left = 0+"%";
+            container.getElementsByClassName("dfault-arrow")[0].style.left = 0+"%";
+            container.getElementsByClassName("dfault-arrow")[0].style.opacity = 0;
+            container.getElementsByClassName("min")[0].textContent = inputs[j].min = 0;
+            container.getElementsByClassName("max")[0].textContent = inputs[j].max = 100;
+            container.getElementsByClassName("value")[0].textContent = 0 + "%";
+            container.getElementsByClassName("value")[0].style.left = 0 + "%"; 
+        
+        }
+        // error.innerHTML = "Please select caste";
+        // blackOut.style.display = "block";
+        // modelBox.style.display = "block";
+        // errormsg.style.display = "block";
+        
+    }else{
+        error.innerHTML = "";
+        document.getElementsByClassName("influence")[0].style.visibility = "visible";
+    }
+
     // reset section
     //  ===========================================
 
@@ -111,7 +146,7 @@ casteSelector.addEventListener("change", function(e){
 
     // ======================================================
 
-    document.getElementsByClassName("influence")[0].style.visibility = "visible";
+    
 
     var filterCasteRows = data.filter(function(obj){
         return obj.Caste === e.target.value;
@@ -127,7 +162,7 @@ casteSelector.addEventListener("change", function(e){
 
     console.log(filterCasteRows);
 
-    error.innerHTML = "";
+    
 
     for(var i=0; i<inputs.length; i++){
         inputs[i].style.pointerEvents = "auto";
