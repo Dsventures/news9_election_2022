@@ -2,7 +2,7 @@
 
 
 ## Caste Equation Widget 
-- [demo](https://www.news9live.com/elections/uttar-pradesh-assembly-election-2022)
+- [demo](https://www.news9live.com/tv9/events/up-caste-equations/slider2.html)
 
 ## Pollpedia 2022
 - Uttar Pradesh (403) [demo](https://www.news9live.com/elections/uttar-pradesh-assembly-election-2022)
