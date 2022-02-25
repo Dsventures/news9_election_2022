@@ -2,7 +2,7 @@
   font-family: "Georama", sans-serif;
 }
 body {
-  background-image: url("img/background.jpg");
+  background-image: url("../img/background.jpg");
   background-size: auto;
   background-repeat: repeat;
 }
