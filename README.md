@@ -1,3 +1,16 @@
-# news9_election_2022
+# News9Live's Election 2022
 
-News9Live's Election Codes
+
+## Caste Equation Widget
+
+## Pollpedia 2022
+- Uttar Pradesh (403)
+- Punjab
+- Uttarakhand
+- Goa
+- Manipur
+
+## Voter turnout widget
+
+## Result day widgets
+
