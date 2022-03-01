@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html><head data-cast-api-enabled="true"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0">
+    <title>VJS Mid-roll</title>
+  <link rel="icon" href="data:;base64,iVBORwOKGO="><link rel="stylesheet" href="./vgr_vjs_.css"></head>
+  
+  
+
+  <body>
+    <div style="height: 100%; width: 100%">
+      <div id="playerContainer" style="background: black; height: 100%; width: 100%"></div>
+    </div>
+
+    <script src="./vgr.download"></script>
+
+    <script>
+      window.recognisedDomains = [
+    "https://s3-ap-southeast-1.amazonaws.com",
+    "https://static.vidgyor.com",
+    "https://content.vidgyor.com",
+    "https://veegam.tv9telugu.com","https://www.tv9telugu.com","https://tv9telugu.com",
+    "https://veegam.tv9bangla.com","https://www.tv9bangla.com","https://tv9bangla.com",
+    "https://veegam.tv9gujarati.com","https://www.tv9gujarati.com","https://tv9gujarati.com",
+    "https://veegam.tv9kannada.com","https://www.tv9kannada.com","https://tv9kannada.com",
+    "https://veegam.tv9marathi.com","https://www.tv9marathi.com","https://tv9marathi.com",
+    "https://veegam.tv9hindi.com","https://www.tv9hindi.com","https://tv9hindi.com"
+      ];
+      function getQueryParams(qs) {
+        qs = qs.split("+").join(" ");
+
+        var params = {},
+          tokens,
+          re = /[?&]?([^=]+)=([^&]*)/g;
+
+        while ((tokens = re.exec(qs))) {
+          params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
+        }
+
+        return params;
+      }
+
+      function parseParameters(item) {
+        if (item === "1") {
+          return true;
+        }
+
+        if (item === "0") {
+          return false;
+        }
+        return false;
+      }
+
+      var options = {
+        videoElemId: "playerContainer",
+        accountId: "tv9",
+        videoId: "197",
+        isAutoPlay: "",
+        isMute: "",
+        posterImageUrl: "",
+        taptounmute: "",
+        disableAds: "",
+      };
+
+      const optionsFromUrl = getQueryParams(window.location.search);
+      options.videoId = optionsFromUrl.videoId || options.videoId;
+
+      if (optionsFromUrl.mute !== undefined) {
+        options.isMute = parseParameters(optionsFromUrl.mute);
+      }
+      if (optionsFromUrl.taptounmute !== undefined) {
+        options.taptounmute = parseParameters(optionsFromUrl.taptounmute);
+      }
+
+      if (optionsFromUrl.disableAds !== undefined) {
+        options.disableAds = parseParameters(optionsFromUrl.disableAds);
+      }
+
+      if (optionsFromUrl.autoplay !== undefined) {
+        options["isAutoPlay"] = parseParameters(optionsFromUrl.autoplay);
+      }
+
+      if (optionsFromUrl.pip !== undefined) {
+        window.pip = parseParameters(optionsFromUrl.pip);
+      }
+
+      let count = 0;
+      var interval;
+      if (optionsFromUrl.piv === "1") {
+        interval = setInterval(function() {
+          window.parent.postMessage("readyToRecieveProps", "*");
+        }, 1000);
+        window.addEventListener("message", function (event) {
+          if (window.recognisedDomains.indexOf(event.origin) > -1) {
+            messageFromParent = event.data;
+            if (messageFromParent === "init") {
+              if (count === 0) {
+                VIDGYOR.initPlayer(options);
+                clearInterval(interval);
+              }
+              count++;
+              parent.postMessage("myevent", "*");
+            }
+          }
+        });
+      } else {
+        VIDGYOR.initPlayer(options);
+      }
+    </script>
+  
+</body></html>

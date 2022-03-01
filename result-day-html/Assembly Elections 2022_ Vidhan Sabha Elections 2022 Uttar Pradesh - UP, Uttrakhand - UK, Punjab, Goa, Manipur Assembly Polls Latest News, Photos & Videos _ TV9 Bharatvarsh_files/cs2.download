@@ -1,0 +1,46 @@
+var banner = document.getElementById('banner');
+
+var tl = new TimelineMax({repeat:0, repeatDelay:0});
+
+window.onload = function() {   
+  
+tl.set(banner, {visibility: "visible"})
+
+	/*frame one*/	
+	.add("frame1")
+	.from(".bg", .0, {alpha:0, ease: Quad.easeInOut}, "frame1")
+	.from(".bg-img, .bg_gradient", .5, {alpha:1, ease: Quad.easeInOut}, "frame1")   
+   	.from(".bg-img", 10, {yPercent:-55, ease:Power1.easeout}, "frame1")    
+	.from(".dell-logo, .vendor-logo, .vendor_copy", .3, {alpha:0, ease: Quad.easeInOut}, "frame1")
+	.from(".title-1", .5, {alpha:0, ease: Quad.easeInOut}, "frame1")
+	.to(".title-1", .5, {alpha:0, ease: Quad.easeInOut}, "frame1+=3.5")
+	
+	/*frame two*/
+	.add("frame2","frame1+=3.5")
+	.from(".title-2", .5, {alpha:0, ease: Quad.easeInOut}, "frame2")
+	.to(".title-2", .5, {alpha:0, ease: Quad.easeInOut}, "frame2+=3.5")
+
+	/*frame three*/
+	.add("frame3","frame2+=3.5")
+	.from(".title-3", .5, {alpha:0, ease: Quad.easeInOut}, "frame3")
+	.to(".title-1, .title-2, .title-3", .5, {alpha:0, ease: Quad.easeInOut}, "frame3+=3.5")     
+
+	/*frame four*/
+	.add("frame4","frame3+=3.5")
+	.from(".f4_bg", .5, {alpha:0, ease: Quad.easeInOut}, "frame4")
+	.from(".title-4", .5, {alpha:0, ease: Quad.easeInOut}, "frame4+=.3")    
+	.from(".cta", .5, {alpha:0, ease: Quad.easeInOut}, "frame4+=.5")    
+    .to(".replay", .3, {autoAlpha:1, visibility: "visible", display:'block', ease: Sine.easeOut})  
+	
+	
+	 
+	  //----- Reply ------
+      replay.addEventListener("click", function(){
+		  tl.restart();
+      });
+    
+    // tl.seek("loop")
+
+    var currentDuration = tl.duration();
+    console.log(currentDuration);   
+};

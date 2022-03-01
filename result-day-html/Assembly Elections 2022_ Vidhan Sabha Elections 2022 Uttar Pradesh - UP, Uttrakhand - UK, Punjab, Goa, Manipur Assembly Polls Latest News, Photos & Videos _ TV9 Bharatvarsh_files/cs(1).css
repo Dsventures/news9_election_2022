@@ -1,0 +1,47 @@
+
+@media only screen and (max-width: 630px) and (max-height: 70px) and (orientation: landscape) {
+
+.dell-logo {
+    width: 15em;
+    top: 1.3em;
+
+}
+.vendor-logo {
+    width: 4.4em;
+    height: auto;
+}
+
+}
+
+/* Landscape resize */
+@media  (min-width: 970px) and (max-height: 66px) and (orientation: landscape) {
+
+#ad {
+    font-size: 1.05vw;
+}
+.dell-logo{
+  width: 10em;
+    top: 0.7em;
+}
+.vendor-logo {
+    width: 3.5em;
+}
+.vendor_copy {
+    top: .7em;
+}
+}
+
+/* Master > resize */
+@media only screen and (min-width: 970px) and (min-height: 90px) and (orientation: landscape) {
+
+#ad{
+  font-size: 1.03vw;
+}
+
+.dell-logo{
+  width: 12.6em;
+  top: 1em;
+}
+
+   
+}

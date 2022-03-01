@@ -1,0 +1,244 @@
+/*-------------------------------------
+    Reset
+---------------------------------------*/
+
+/******Basic settings**********/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; 
+  -webkit-text-size-adjust: 100%; 
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+img{
+  border: 0;
+}
+a{
+  text-decoration: none;
+}
+body{
+  font-family: 'Roboto', sans-serif; 
+  color: #444444;
+}
+
+#frame_one, #frame_two,#frame_three,#frame_four,#frame_five {
+  width: 100%;
+  height: 100%;
+}
+
+/*-------------------------------------
+    Layout
+---------------------------------------*/
+
+#ad {
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 100%;
+  height: 100%;
+  font-size: 1.375vw;
+  position: absolute;
+}
+
+#banner {
+  position: absolute;
+  background: #eeeeee;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
+  visibility: hidden; 
+  border: 1px solid #444444; 
+  -webkit-box-sizing: border-box;  
+        box-sizing: border-box;
+}
+
+#clickTAG {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+.ie-fallback{
+  position: absolute;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+}
+
+/*-------------------------------------
+  Frame One frame duration: 3s
+---------------------------------------*/
+
+.bg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.bg-img{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    transform-origin: 50% 50%;
+}
+
+.bg_gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.dell-logo{
+    top: 1.7em;
+    left: 2em;
+    width: 15em;
+	height:auto;
+    position: absolute;
+    z-index: 80;
+}
+.vendor-logo{
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1.5em;
+    width: 4.6em;
+	height:auto;
+    position: absolute;
+    z-index: 80;
+}
+
+.title-1{
+  font-size: 1.9em;
+  letter-spacing: .1em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-align: left;
+  bottom: 13%;
+  left: 1em;
+  width: 100%;
+  position: absolute;
+}
+.vendor_copy{
+    font-size: .9em;
+    line-height: .2em;
+    font-weight: 400;
+    color: #ffffff;
+    text-align: left;
+    top: 1.7em;
+    right: 9em;
+    position: absolute;
+    z-index: 80; 
+}
+.vendor_copy sup{
+  font-size: .6em;
+  line-height: .2em;
+}
+/*-------------------------------------
+  Frame two  frame duration: 3s
+---------------------------------------*/
+
+.title-2{
+  font-size: 1.9em;
+  letter-spacing: .1em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-align: left;
+  bottom: 13%;
+  left: 1em;
+  width: 100%;
+  position: absolute;
+}
+
+/*-------------------------------------
+  Frame Three  frame duration: 3s
+---------------------------------------*/
+
+.title-3{
+  font-size: 1.9em;
+  letter-spacing: .1em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-align: left;
+  bottom: 13%;
+  left: 1em;
+  width: 100%;
+  position: absolute;
+}
+
+/*-------------------------------------
+ Frame Four  frame duration: 3s
+---------------------------------------*/
+
+.f4_bg {
+ position: absolute;
+ left: 0;
+ width: 100%;
+ height: auto;
+ top: 50%;
+ transform: translateY(-50%); 
+}
+.title-4{
+    font-size: 1.4em;
+    letter-spacing: -.02em;
+    line-height: 1.2em;
+    font-weight: 400;
+    color: #ffffff;
+    text-align: left;
+    bottom: 0.4em;
+    left: 1.3em;
+    width: 100%;
+    position: absolute;
+}
+.cta{
+    position: absolute;
+    font-size: 1em;
+    line-height: .1em;
+    letter-spacing: .05em;
+    font-weight: 700;
+    vertical-align: middle;
+    color: #ffffff;
+    border: #ffffff .1em solid;
+    text-align: center;
+    text-transform: uppercase;
+    right: 8.1em;
+    bottom: 1.5em;
+    display: block;
+    z-index: 99;
+    padding: 1.1em .8em 1.1em .8em;
+}
+.cta span{
+    font-size: 1.5em;
+}
+.replay {
+  position: absolute;
+  width: .8em;
+  height: .8em;
+  visibility: hidden;
+  display: none;
+  opacity: 0;
+   right: 0.3%;
+    top: 3%;
+  cursor: pointer;
+  z-index: 9999;
+}

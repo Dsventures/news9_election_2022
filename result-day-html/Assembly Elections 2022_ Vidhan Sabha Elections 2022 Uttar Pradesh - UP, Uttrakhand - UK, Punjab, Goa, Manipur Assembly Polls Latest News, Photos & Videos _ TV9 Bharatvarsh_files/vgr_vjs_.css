@@ -1,0 +1,441 @@
+body {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    width: 100vw !important;
+    height: 100vh !important;
+    font-family: arial, verdana, sans-serif;
+    overflow: auto;
+  }
+
+  .vjs-quality-menu-button>.vjs-icon-placeholder::before {
+    content: "\f110";
+    display: block;
+    height: 20px;
+    width: 20px;
+  }
+
+  .vjs-quality-menu-wrapper .vjs-menu-button-popup {
+    font-family: "VideoJS";
+  }
+
+  #content_video {
+    height: 100%;
+    width: 100%;
+  }
+
+  #vid-tap-unmute {
+    position: absolute;
+    background: #fff;
+    color: #000;
+    font-size: 16px;
+    outline: 0;
+    padding: 4px;
+    cursor: pointer;
+    z-index: 1200;
+    float: left;
+    width: auto;
+    margin-top: 2px;
+    margin-left: 2px
+  }
+
+  .text-show {
+    animation-name: optext;
+    animation-timing-function: linear;
+    animation-duration: .2s;
+    animation-delay: 4.9s;
+    animation-fill-mode: forwards;
+    position: absolute;
+    background: #fff;
+    color: #000;
+    font-size: 16px;
+    outline: 0;
+    padding: 5.5px;
+    cursor: pointer;
+    z-index: 1200;
+    margin-left: 30px;
+    margin-top: 2px;
+  }
+
+  .text-show p {
+    line-height: 19px;
+    color: #000;
+    width: 100%;
+    font-size: 15px;
+    font-weight: 700;
+    position: relative;
+    text-align: center;
+    padding: 1px 5px;
+    margin: 0;
+    font-family: arial;
+    box-sizing: border-box;
+    white-space: nowrap;
+  }
+
+  #overMute {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 1300;
+    pointer-events: auto
+  }
+
+  .pop {
+    bottom: 300px;
+    right: 10px;
+    position: fixed;
+    width: 320px;
+    height: 240px;
+    background: #000;
+    border: 1px solid #FFF;
+    transform: translateY(100%);
+    animation: fade-in-up .25s ease forwards;
+    z-index: 9999;
+    -webkit-box-shadow: 0 0 12px -1px rgba(0, 0, 0, 0.42);
+    -moz-box-shadow: 0 0 12px -1px rgba(0, 0, 0, 0.42);
+    box-shadow: 0 0 12px -1px rgba(0, 0, 0, 0.42);
+  }
+
+
+  .base-timer {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+  }
+
+  .base-timer__svg {
+    transform: scaleX(-1);
+  }
+
+  .base-timer__circle {
+    fill: none;
+    stroke: none;
+  }
+
+  .base-timer__path-elapsed {
+    stroke-width: 7px;
+    stroke: grey;
+  }
+
+  .base-timer__path-remaining {
+    stroke-width: 10px;
+    stroke-linecap: round;
+    transform: rotate(90deg);
+    transform-origin: center;
+    transition: 1s linear all;
+    fill-rule: nonzero;
+    stroke: orange;
+  }
+
+  .base-timer__path-remaining.green {
+    /* color: rgb(65, 184, 131); */
+    color: orange;
+  }
+
+  .base-timer__path-remaining.orange {
+    color: orange;
+  }
+
+  .base-timer__path-remaining.red {
+    color: red;
+  }
+
+  .base-timer__label {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+  }
+
+  #countDownTimer {
+    position: absolute;
+    background-color: black;
+    opacity: 0.8;
+    bottom: 35px;
+    height: 30px;
+    width: 6%;
+    left: 3%;
+    display: inline-block;
+  }
+
+  .adMessage {
+    position: absolute;
+    color: white;
+    height: 30px;
+    white-space: nowrap;
+    bottom: -1px;
+    font-size: 13px;
+    left: 130%;
+    background: black;
+    margin: auto;
+  }
+
+  .adMessage p {
+    text-align: center;
+    margin-top: 8px;
+    padding-right: 5px;
+  }
+  .vid-bannerad{
+    position: absolute;
+    bottom: 10%;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+  }
+
+  #vgr-cross{
+  cursor: pointer;
+  width: 468px;
+    text-align: right;
+    margin: auto;
+    margin-bottom: -20px;
+  }
+
+.cross-vgr {
+  height: 18px;
+  position: relative;
+  left: 0;
+  background: white;
+}
+
+.cross-svg {
+  height: 15px;
+  width: 15px;
+  stroke: #00aecd;
+  fill: #00aecd;
+  stroke-width: 1.25;
+  cursor: pointer;
+  background: #ffff;
+  position: relative;
+  left: -1px;
+  top: -2px;
+}
+.midrollOverlay {
+  top: 0;
+  width: 100vw;
+  background: black;
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 2;
+}
+
+.move-banner{
+  text-align: center;
+}
+
+.videoAdUiSkipContainer {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  bottom: 22px;
+  cursor: pointer;
+  padding: 15px 0 15px 15px;
+  pointer-events: auto;
+  position: absolute;
+  right: 0;
+  z-index: 1000;
+}
+.videoAdUiSkipButton {
+  line-height: normal;
+  min-width: 0;
+  padding: 7px 6px 7px 10px;
+  width: auto;
+  margin: 0;
+  opacity: 0.85;
+  background: black !important;
+}
+.videoAdUiAction {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  background: rgba(0,0,0,0.8);
+  border: 1px solid rgba(255,255,255,0.5) !important;
+  border-right: 0;
+  box-sizing: content-box;
+  color: #fff;
+  cursor: pointer;
+  direction: ltr;
+  font-family: arial,sans-serif;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: normal;
+  padding: 10px 7px;
+  padding-right: 0;
+  text-align: center;
+}
+
+.videoAdUiSkipContainer {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  bottom: 22px;
+  cursor: pointer;
+  padding: 15px 0 15px 15px;
+  pointer-events: auto;
+  position: absolute;
+  right: 0;
+  z-index: 1000;
+}
+
+
+.videoAdUiSkipButtonExperimentalText {
+  display: inline-block;
+  font-size: 18px;
+  vertical-align: middle;
+  width: initial;
+}
+
+.videoAdUiSkipButton {
+  line-height: normal;
+  min-width: 0;
+  padding: 7px 6px 7px 10px;
+  width: auto;
+  margin: 0;
+}
+
+.videoAdUiSkipContainer {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  bottom: 22px;
+  cursor: pointer;
+  padding: 15px 0 15px 15px;
+  pointer-events: auto;
+  position: absolute;
+  right: 0;
+  z-index: 1000;
+  margin-bottom: 10px;
+}
+
+
+.videoAdUiSkipIcon {
+  display: inline-block;
+  height: 24px;
+  margin-left: 2px;
+  vertical-align: middle;
+  width: 24px;
+}
+.videoAdUiSkipIcon>svg {
+  fill: white;
+  height: 24px;
+  width: 24px;
+  -webkit-filter: drop-shadow(0 1px 5px rgba(0,0,0,0.2));
+  filter: drop-shadow(0 1px 5px rgba(0,0,0,0.2));
+}
+.videoAdUiAutoClose {
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+  color: #999;
+  font-family: Arial;
+  font-size: 10pt;
+  margin-bottom: 13px;
+  z-index: 5;
+};
+
+.vjs-menu li {
+text-transform: uppercase !important;
+}
+
+.vjs-seek-to-live-text {
+  font-size: 1.2em !important;
+}
+
+@media only screen and (max-width: 200px) {
+  .video-js .vjs-control {
+    width: 3em !important;
+  };
+}
+
+@media only screen and (max-width: 200px) {
+  .move-banner {
+    transform: translate(-4%, -33%) scale(0.3) !important;
+  }
+  .videoAdUiAutoClose {
+    bottom: 11px;
+    font-size: 8pt;
+    margin-bottom: 0px;
+  }
+  .videoAdUiSkipContainer {
+    margin-bottom: -13px;
+  }
+  .vid-bannerad {
+  transform :translate(-22%, 0px) scale(0.3) !important;
+  }
+  #countDownTimer {
+    transform: translate(0px, 56%) scale(0.5);
+  }
+}
+
+@media all and (max-width: 320px) and (min-width: 201px) {
+  .move-banner {
+    transform: translate(-1%, -21%) scale(0.6);
+  }
+  .videoAdUiAutoClose {
+    bottom: 9px;
+    font-size: 8pt;
+    margin-bottom: 0px;
+  }
+  .videoAdUiSkipContainer {
+    margin-bottom: -11px;
+  }
+}
+
+@media all and (max-width: 448px) and (min-width: 321px) {
+  .move-banner {
+    transform: translate(-1%, -6%) scale(0.8);
+  }
+  .videoAdUiAutoClose {
+    bottom: 7px;
+    right: 7px;
+    margin-bottom: 0px;
+  }
+  .videoAdUiSkipContainer {
+    bottom: 5px;
+  }
+  .vid-bannerad {
+    transform: translate(-1%, -6%) scale(0.7);
+  }
+}
+
+@media all and (max-width: 400px) and (min-width: 321px) {
+  .move-banner {
+    transform: translate(-1%, -6%) scale(0.6);
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .vjs-layout-tiny .vjs-menu-button-popup .vjs-menu .vjs-menu-content, .vjs-layout-x-small .vjs-menu-button-popup .vjs-menu .vjs-menu-content {
+    max-height: 15em !important;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .vid-bannerad {
+    transform: translate(-7%, 0px) scale(0.5) !important;
+  }
+}
+
+#vidTapUnMuteBtn {
+  position: absolute;
+  top: 0;
+}
+
+.video-js.vjs-quality-menu .vjs-quality-menu-button-use-resolution .vjs-quality-menu-item-sub-label {
+  position: absolute;
+  right: 0;
+  text-align: center;
+  width: 4em;
+}
+
+.vjs-menu-button-popup .vjs-menu {
+z-index: 10;
+}
+.video-js .vjs-control {
+z-index: 2;
+}
+
+.videoAdUiSkipIcon {
+  display: none;
+}
