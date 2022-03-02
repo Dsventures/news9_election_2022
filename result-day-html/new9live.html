@@ -12664,15 +12664,56 @@
                <!-- ==================================== -->
                <style>
                   /* breaking news */
-
+.breakingNews {position: relative;display: flex;align-items: center;width: 100%;background-color: #ecf2ff;margin-bottom: 20px;}
+.breakingNews ul li p{overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;font-weight: bold;font-size: 14px;}
+.breakingNews .bh-label {position: relative;background-color: #de0000;color: #fff;padding: 12px;margin-right: 20px;text-transform: uppercase;font-size: 15px;text-align: center;width: 160px;word-break: break-word;}
+.breakingNews .bh-label:after,.budgetHighlight .bh-label:before {content: '';position: absolute;top: 50%;transform: translateY(-50%);-webkit-transform: translateY(-50%);left: 100%;width: 0;height: 0;border-style: solid;}
+.breakingNews .bh-label:before {border-width: 9px 0 9px 11px;border-color: transparent transparent transparent #de0000;}
+.breakingNews .bh-label:after {border-width: 8px 0 8px 10px;border-color: transparent transparent transparent #de0000;}
+.breakingNews .BNCrossbtn{background: #818181;width: 20px;height: 20px;line-height: 17px;top: -6px;right: -6px;font-size: 14px;font-weight: 400;}
+/* banner css starts here */
+.elec_bann_wrapper picture img{width: 100%;}
+/* .sponsorWrap{font-size: 13px;text-align: center;display: flex;width: 30%;} */
+/* banner css ends here */
+/* swipersliderbx css starts */
 .elec_bann_wrapper, .stateVotecnt, .AW_result, .alliance-table, .predictionBX, .projectionTable{margin-bottom: 20px;clear: both;}
 .stateVotecnt ul, .predictionBX ul li{background: #fff;box-shadow: 0 0 10px 0 rgba(14, 10, 188, 0.2);display: flex;}
+.predictionBX{position: relative;}
 .predictionBX ul li{column-gap: 5%;}
 .stateVotecnt ul li{border-right: 1px solid rgb(217, 217, 217);text-align: center;color: #fff;flex-grow: 1;background: #f3f3f3;}
 .predictionBX ul li .partyInfo{width: 75%;}
 .predictionBX ul li .PR_detail{width: 20%;}
 .predictionBX ul li .partyID span{font-size:12px;}
+#prediction-goto{
+   display: flex;justify-content: space-between;
+}
+#prediction-method{
+   border:none; background-color: transparent;color: #dc0000;font-size: 12px; font-weight: 700; text-transform: uppercase; cursor:pointer;
+}
+#closePredictionMethod{ background-color: #000; color: #fff; font-size: 16px; border: none;width: 25px; height: 25px; border-radius:50%;position: absolute; top: 10px;right: 10px;}
+#prediction_blackout{
+   position: absolute; width: 100%; height: 100%; background-color: rgba(0, 0, 0, .7); z-index: 100; top: 0; left: 0;
+}
 
+
+#prediction_blackout .model_inner{
+   color: #FFF;
+   position: absolute;
+   width: 50%;
+   height: fit-content;
+   background-color: #ccc;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   text-align: center;
+   padding: 20px;
+}
+#prediction_blackout .model_inner h3{
+   font-size: 18px; color: #000;
+}
+#prediction_blackout .model_inner p{
+   font-size: 14px;
+}
 .stateVotecnt ul li p{color: #fff;}
 .stateVotecnt ul li h3, .AW_result h2 i{font-size: 15px;}
 .stateVotecnt ul li:first-child {padding: 20px 6px 0;background: #000;}
@@ -12699,7 +12740,42 @@ p.elec_subheading {color: #676767; font-size: 14px;}
 .swipersliderbx .swiper-slide-visible {opacity: 1;}
 /*  swipersliderbx css ends */ 
 /* highlights css starts here */
-
+.stories-scroller-m__container-row__ZV-pT .stories-scroller-m__stories-scroller-container__2ZwM5 .stories-scroller-m__stories__1xPWz .stories-scroller-m__story-headline__2gLve .stories-scroller-m__story-link__3qVir {color: #000;}
+.stories-scroller-m__container-row__ZV-pT .stories-scroller-m__stories-scroller-container__2ZwM5 {background: #ececec;overflow: hidden;white-space: nowrap;border-radius: 8px;border: 1px solid rgb(212, 212, 212);}
+.stories-scroller-m__container-row__ZV-pT {line-height: 40px;}
+.stories-scroller-m__container-row__ZV-pT .stories-scroller-m__stories-scroller-container__2ZwM5 .stories-scroller-m__stories-scroller-header__1Jcx- {background-color: #db0102;padding: 0px 12px;float: left;border-radius: 8px 0 0 8px;}
+.stories-scroller-m__container-row__ZV-pT .stories-scroller-m__stories-scroller-container__2ZwM5 .stories-scroller-m__stories-scroller-wrapper__1GQJc {overflow: hidden; white-space: nowrap;}
+.stories-scroller-m__container-row__ZV-pT .stories-scroller-m__stories-scroller-container__2ZwM5 .stories-scroller-m__stories__1xPWz {position: relative; -webkit-animation: stories-scroller-m__storiesScroller__3JIts 75s linear infinite;animation: stories-scroller-m__storiesScroller__3JIts 75s linear infinite;display: table-cell;}
+.stories-scroller-m__container-row__ZV-pT .stories-scroller-m__stories-scroller-container__2ZwM5 .stories-scroller-m__stories__1xPWz .stories-scroller-m__story-headline__2gLve {display: inline-block;vertical-align: top;padding-right: 5px;padding-left: 5px;}
+.stories-scroller-m__container-row__ZV-pT .stories-scroller-m__stories-scroller-container__2ZwM5 .stories-scroller-m__stories__1xPWz .stories-scroller-m__story-headline__2gLve .stories-scroller-m__story-link__3qVir {margin: 0 6px; display: inherit;}
+.stories-scroller-m__container-row__ZV-pT .stories-scroller-m__stories-scroller-container__2ZwM5 .stories-scroller-m__stories__1xPWz:hover {-webkit-animation-play-state: paused;animation-play-state: paused}
+@-webkit-keyframes stories-scroller-m__storiesScroller__3JIts {
+    0% {-webkit-transform: translateX(0);transform: translateX(0)}
+    to {-webkit-transform: translateX(-80%);transform: translateX(-80%)}
+}
+@keyframes stories-scroller-m__storiesScroller__3JIts {
+    0% {-webkit-transform: translateX(0);transform: translateX(0)}
+    to {-webkit-transform: translateX(-80%);transform: translateX(-80%)}
+}
+.blob {border-radius: 50%;height: 10px;width: 10px;transform: scale(1);animation: pulse-black 2s infinite;}
+.ring-container {position: relative;height: 40px;display: flex;align-items: center;}
+.blob.orange {background: #fddc00;box-shadow: 0 0 0 0 #fddc00;animation: pulse-orange 2s infinite;}
+@keyframes pulse-orange {
+    0% {transform: scale(0.95);box-shadow: 0 0 0 0 rgba(255, 121, 63, 0.7);}
+    70% {transform: scale(1);box-shadow: 0 0 0 10px rgba(255, 121, 63, 0);}
+    100% {transform: scale(0.95);box-shadow: 0 0 0 0 rgba(255, 121, 63, 0);}
+}
+/* highlights css ends here */
+/* top9 news css starts here */
+.tv9lb-liveblog-home{border-left: 1px solid #d9d9d9;margin: 10px 0 0 5px;padding-left: 10px;}
+.tv9lb-liveblog-home ul li, .PR_detail{position: relative;}
+.tv9lb-liveblog-home ul li::after{content: '';width: 10px;height: 10px;position: absolute;top: 0;left: -16px;border-radius: 10px;background: #dc0000;box-sizing: border-box;}
+.tv9lb-liveblog-home .timestamp span {color: #777;font-size: 12px;line-height: 1;font-weight: 400;margin-bottom: 8px;display: block;}
+.tv9lb-liveblog-home ul li p{font-size:14px;line-height:20px;}
+.tv9lb-liveblog-home .moreBlogs, .moreProjec a{color:#dc0000;font-size:12px;font-weight:700;text-transform: uppercase;}
+.tv9lb-liveblog-home .moreBlogs span::after, .moreProjec a span:after{content: "";display: inline-block;width: 6px;height: 6px;border: solid #dc0000;border-width: 0 1px 1px 0;margin: -1px 0 0 3px;vertical-align: middle;-webkit-transform: rotate(-45deg);-moz-transform: rotate(-45deg);-ms-transform: rotate(-45deg);-o-transform: rotate(-45deg);transform: rotate(-45deg);}
+@media only screen and (min-width: 768px) {.hide-desktop{display:none;}}
+/* top9 news css ends here */
 /* graphics css starts here */
 .result_wrapper{background-image: url(images/graphicBG.png);padding: 15px;clear: both;margin-bottom: 20px; text-align: center;}
 .result_wrapper .elec_heading{margin-bottom:10px;text-align: center;justify-content: center;}
@@ -14643,9 +14719,32 @@ p.elec_subheading {color: #676767; font-size: 14px;}
                      </li>
                   </ul>
 
-                  <div class="moreProjec">
-                     <a href="" class=""><span>All UP Projections </span></a>
+                  <div id="prediction_blackout" style="display: none;">
+                  
+                     <div class="model_inner">
+                        <button id="closePredictionMethod">X</button>
+                        <h3>Methodology</h3>
+                        <p> Methodology text goes here</p>
+                     </div>
+                  
                   </div>
+
+                  <div id="prediction-goto">
+                     <button id="prediction-method">Methodology</button>
+                     <div class="moreProjec">
+                        <a href="" class=""><span>All UP Projections </span></a>
+                     </div>
+                  </div>
+
+                  <script>
+                     document.getElementById("prediction-method").addEventListener("click", function(){
+                        document.getElementById("prediction_blackout").style.display = "block";
+                     })
+                     document.getElementById("closePredictionMethod").addEventListener("click", function(){
+                        document.getElementById("prediction_blackout").style.display = "none";
+                     })
+                  </script>
+
                
                </div>
 
