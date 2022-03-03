@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Candidate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Georama:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!-- for demo only -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.news9live.com/styles/themetvfile.min.e5df8239.css" />
+    <link rel="stylesheet" href="css/common.css">
+    <!-- ------------- -->
+    <link rel="stylesheet" href="css/election/election-common.css">
+    <link rel="stylesheet" href="css/election/election-candidate.css">
+</head>
+
+<body>
+    <div class="full_wrapper">
+        <div class="main_wrapper">
+            <div id="ad_level_1" class=""></div>
+            <div class="election_wrapper">
+                <div class="breadcrum">
+                    <ul>
+                        <li>
+                            <div itemscope="" itemtype="http://schema.org/BreadcrumbList" class="breadcrumbs">
+                                <span>
+                                    <span itemprop="itemListElement" itemscope=""
+                                        itemtype="http://schema.org/ListItem"><a itemprop="item" href="/"><span
+                                                itemprop="name">Home</span></a>
+                                        <meta itemprop="position" content="0">
+                                    </span> »
+                                    <span itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                                        <a itemprop="item" href=""><span itemprop="name">Elections</span></a>
+                                        <meta itemprop="position" content="1">
+                                    </span> »
+                                    <span itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                                        <a itemprop="item" href=""><span itemprop="name">UP ASSEMBLY ELECTIONS
+                                                2021</span></a>
+                                        <meta itemprop="position" content="1">
+                                    </span> » <span aria-current="page" class="breadcrumb_last"> Prayagraj </span>
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="candidate_dashboard">
+                    <div class="candidate-select">
+                        <div class="candidate_search">
+                            <select name="" id="candidate_search_list">
+                                <option value="">Key Candidates</option>
+                                <option value="">Two</option>
+                                <option value="">Three</option>
+                                <option value="">Four</option>
+                            </select>
+                        </div>
+                        <div class="cat_nav">
+                            <ul>
+                                <li>
+                                    <img src="assets/img/image-6.png" alt="">
+                                    <a href="#">KEY CANDIDATES</a>
+                                </li>
+                                <li>
+                                    <img src="assets/img/image-7.png" alt="">
+                                    <a href="#">KEY CONSTITUENCIES</a>
+                                </li>
+                                <li>
+                                    <img src="assets/img/noun_Flag.png" alt="">
+                                    <a href="#">PARTIES</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <style>
+                                         
+                        .list-inline .won {
+                            color: #2E7D32;
+                        }
+                    
+                        .list-inline .leading {
+                            color: #4CAF50;
+                        }
+                    
+                        .list-inline .lost {
+                            color: #D50000;
+                        }
+                    
+                        .list-inline .trailing {
+                            color: #E57373;
+                        }
+                    
+                        .list-inline .awaited {
+                            color: #757575;
+                        }
+                    </style>
+                    <div class="candidate-intro">
+                        <img src="https://via.placeholder.com/320" id="candidateImg" alt="">
+                        <div class="candidate-intro-content">
+                            <h1 class="dash-title" id="candidateName">Yogi Adithyanath</h1>
+                            <ul class="list-inline">
+                                <li>Constituency: <span id="constName"></span></li>
+                                <li>State: <span id="stateName"></span></li>
+                                <li>Age: <span id="candAge"></span></li>
+                                <li>Seat Type: <span id="seatType"></span></li>
+                                <li>Won/Lost: <span id="wonLoststatus" class="won">Won</span></li>
+                            </ul>
+                            <p id="candidateIntro">The Taliban are reported to have raised their flag above a key border
+                                post between Afghanistan and Pakistan,
+                                and claim it is now under their control.</p>
+                        </div>
+                    </div>
+                    <div class="candidate-info">
+                        <h2>Candidate Info</h2>
+                        <ul class="list-inline">
+                            <li>
+                                <img src="assets/img/criminal-cases.png" alt="">Criminal Case
+                                <span id="candCases"></span>
+                            </li>
+                            <li>
+                                <img src="assets/img/education.png" alt="">Education
+                                <span id="candEdu"></span>
+                            </li>
+                            <li>
+                                <img src="assets/img/assets.png" alt="">
+                                Total Assets <span id="candAssets"></span>
+                            </li>
+                            <li>
+                                <img src="assets/img/liabilities.png" alt="">Total Liabilities
+                                <span id="candLiability"></span>
+                            </li>
+                        </ul>
+                    </div>
+                    <hr class="seperator">
+                    <div id="" class="">
+                        <div class="adsCont fullAdd"></div>
+                    </div>
+                    <div class="candidate_nav">
+                        <h2>Key Candidates</h2>
+                        <div class="swiper candidateSwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <figure>
+                                        <a href="#"><img src="assets/img/candidate.png" alt=""></a>
+                                        <figcaption>Yogi Adityanath</figcaption>
+                                    </figure>
+                                </div>
+                                <div class="swiper-slide">
+                                    <figure>
+                                        <a href="#"><img src="assets/img/candidate.png" alt=""></a>
+                                        <figcaption>Yogi Adityanath</figcaption>
+                                    </figure>
+                                </div>
+                                <div class="swiper-slide">
+                                    <figure>
+                                        <a href="#"><img src="assets/img/candidate.png" alt=""></a>
+                                        <figcaption>Yogi Adityanath</figcaption>
+                                    </figure>
+                                </div>
+                                <div class="swiper-slide">
+                                    <figure>
+                                        <a href="#"><img src="assets/img/candidate.png" alt=""></a>
+                                        <figcaption>Yogi Adityanath</figcaption>
+                                    </figure>
+                                </div>
+                                <div class="swiper-slide">
+                                    <figure>
+                                        <a href="#"><img src="assets/img/candidate.png" alt=""></a>
+                                        <figcaption>Yogi Adityanath</figcaption>
+                                    </figure>
+                                </div>
+                                <div class="swiper-slide">
+                                    <figure>
+                                        <a href="#"><img src="assets/img/candidate.png" alt=""></a>
+                                        <figcaption>Yogi Adityanath</figcaption>
+                                    </figure>
+                                </div>
+                                <div class="swiper-slide">
+                                    <figure>
+                                        <a href="#"><img src="assets/img/candidate.png" alt=""></a>
+                                        <figcaption>Yogi Adityanath</figcaption>
+                                    </figure>
+                                </div>
+                                <div class="swiper-slide">
+                                    <figure>
+                                        <a href="#"><img src="assets/img/candidate.png" alt=""></a>
+                                        <figcaption>Yogi Adityanath</figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="" class="">
+                        <div class="adsCont fullAdd"></div>
+                    </div>
+                    <div class="party_nav">
+                        <h2>Jump to party</h2>
+                        <div class="swiper partySwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <figure>
+                                        <a href="#"><img src="assets/img/party.png" alt=""></a>
+                                        <figcaption>BSP</figcaption>
+                                    </figure>
+                                </div>
+                                <div class="swiper-slide">
+                                    <figure>
+                                        <a href="#"><img src="assets/img/party.png" alt=""></a>
+                                        <figcaption>BSP</figcaption>
+                                    </figure>
+                                </div>
+                                <div class="swiper-slide">
+                                    <figure>
+                                        <a href="#"><img src="assets/img/party.png" alt=""></a>
+                                        <figcaption>BSP</figcaption>
+                                    </figure>
+                                </div>
+                                <div class="swiper-slide">
+                                    <figure>
+                                        <a href="#"><img src="assets/img/party.png" alt=""></a>
+                                        <figcaption>BSP</figcaption>
+                                    </figure>
+                                </div>
+                                <div class="swiper-slide">
+                                    <figure>
+                                        <a href="#"><img src="assets/img/party.png" alt=""></a>
+                                        <figcaption>BSP</figcaption>
+                                    </figure>
+                                </div>
+                                <div class="swiper-slide">
+                                    <figure>
+                                        <a href="#"><img src="assets/img/party.png" alt=""></a>
+                                        <figcaption>BSP</figcaption>
+                                    </figure>
+                                </div>
+                                <div class="swiper-slide">
+                                    <figure>
+                                        <a href="#"><img src="assets/img/party.png" alt=""></a>
+                                        <figcaption>BSP</figcaption>
+                                    </figure>
+                                </div>
+                                <div class="swiper-slide">
+                                    <figure>
+                                        <a href="#"><img src="assets/img/party.png" alt=""></a>
+                                        <figcaption>BSP</figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="constituency_filter">
+                        <h2>Jump to Constituency</h2>
+                        <ul class="filter-nav alphabeticFilter">
+                            <li class="active"><a href="#">A</a></li>
+                            <li><a href="#">B</a></li>
+                            <li><a href="#">C</a></li>
+                            <li><a href="#">D</a></li>
+                            <li><a href="#">E</a></li>
+                            <li><a href="#">F</a></li>
+                            <li><a href="#">G</a></li>
+                            <li><a href="#">H</a></li>
+                            <li><a href="#">I</a></li>
+                            <li><a href="#">J</a></li>
+                            <li><a href="#">K</a></li>
+                            <li><a href="#">L</a></li>
+                            <li><a href="#">N</a></li>
+                            <li><a href="#">M</a></li>
+                            <li><a href="#">O</a></li>
+                            <li><a href="#">P</a></li>
+                            <li><a href="#">Q</a></li>
+                            <li><a href="#">R</a></li>
+                            <li><a href="#">S</a></li>
+                            <li><a href="#">T</a></li>
+                            <li><a href="#">U</a></li>
+                            <li><a href="#">V</a></li>
+                            <li><a href="#">W</a></li>
+                            <li><a href="#">X</a></li>
+                            <li><a href="#">Y</a></li>
+                            <li><a href="#">Z</a></li>
+                        </ul>
+                        <div class="filtered-data">
+                            <ul id="const-jump-list">
+                            </ul>
+                            <span id="noconstdata" style="display: none;">No Consistuency</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="ad_level_2" class="">
+                    <div class="adsCont fullAdd"></div>
+                </div>
+                <section class="election_news_list">
+                    <div class="heading">
+                        <h2 class="h2"><a href="#">From the ground</a></h2>
+                        <a class="moreNews" href="#">See More >></a>
+                    </div>
+                    <ul>
+                        <li>
+                            <figure>
+                                <div class="imgWrap">
+                                    <a href=""><img src="https://www.news9live.com/images/placeholder.jpg" alt=""></a>
+                                </div>
+                                <figcaption>
+                                    <a href="">Adityanath hints at changing Azamgarh's name to 'Aryamgarh', Akhilesh
+                                        hits back with 'illiterate' jab</a>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure>
+                                <div class="imgWrap">
+                                    <a href=""><img src="https://www.news9live.com/images/placeholder.jpg" alt=""></a>
+                                </div>
+                                <figcaption>
+                                    <a href="">Adityanath hints at changing Azamgarh's name to 'Aryamgarh', Akhilesh
+                                        hits back with 'illiterate' jab</a>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure>
+                                <div class="imgWrap">
+                                    <a href=""><img src="https://www.news9live.com/images/placeholder.jpg" alt=""></a>
+                                </div>
+                                <figcaption>
+                                    <a href="">Adityanath hints at changing Azamgarh's name to 'Aryamgarh', Akhilesh
+                                        hits back with 'illiterate' jab</a>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure>
+                                <div class="imgWrap">
+                                    <a href=""><img src="https://www.news9live.com/images/placeholder.jpg" alt=""></a>
+                                </div>
+                                <figcaption>
+                                    <a href="">Adityanath hints at changing Azamgarh's name to 'Aryamgarh', Akhilesh
+                                        hits back with 'illiterate' jab</a>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <div id="grid_ad_index_1" class="">
+                                <div class="adsCont headertopads"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <figure>
+                                <div class="imgWrap">
+                                    <a href=""><img src="https://www.news9live.com/images/placeholder.jpg" alt=""></a>
+                                </div>
+                                <figcaption>
+                                    <a href="">Adityanath hints at changing Azamgarh's name to 'Aryamgarh', Akhilesh
+                                        hits back with 'illiterate' jab</a>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure>
+                                <div class="imgWrap">
+                                    <a href=""><img src="https://www.news9live.com/images/placeholder.jpg" alt=""></a>
+                                </div>
+                                <figcaption>
+                                    <a href="">Adityanath hints at changing Azamgarh's name to 'Aryamgarh', Akhilesh
+                                        hits back with 'illiterate' jab</a>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure>
+                                <div class="imgWrap">
+                                    <a href=""><img src="https://www.news9live.com/images/placeholder.jpg" alt=""></a>
+                                </div>
+                                <figcaption>
+                                    <a href="">Adityanath hints at changing Azamgarh's name to 'Aryamgarh', Akhilesh
+                                        hits back with 'illiterate' jab</a>
+                                </figcaption>
+                            </figure>
+                        </li>
+                    </ul>
+                </section>
+                <div id="ad_level_3" class="">
+                    <div class="adsCont fullAdd"></div>
+                </div>
+                <section class="election_video_list">
+                    <div class="heading">
+                        <h2 class="h2"><a href="#">Election videos</a></h2>
+                        <a class="moreNews" href="#">See More >></a>
+                    </div>
+                    <ul>
+                        <li>
+                            <figure>
+                                <div class="imgWrap">
+                                    <a href=""><img src="https://www.news9live.com/images/placeholder.jpg" alt=""></a>
+                                </div>
+                                <figcaption>
+                                    <a href="">Adityanath hints at changing Azamgarh's name to 'Aryamgarh', Akhilesh
+                                        hits back with 'illiterate' jab</a>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure>
+                                <div class="imgWrap">
+                                    <a href=""><img src="https://www.news9live.com/images/placeholder.jpg" alt=""></a>
+                                </div>
+                                <figcaption>
+                                    <a href="">Adityanath hints at changing Azamgarh's name to 'Aryamgarh', Akhilesh
+                                        hits back with 'illiterate' jab</a>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure>
+                                <div class="imgWrap">
+                                    <a href=""><img src="https://www.news9live.com/images/placeholder.jpg" alt=""></a>
+                                </div>
+                                <figcaption>
+                                    <a href="">Adityanath hints at changing Azamgarh's name to 'Aryamgarh', Akhilesh
+                                        hits back with 'illiterate' jab</a>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure>
+                                <div class="imgWrap">
+                                    <a href=""><img src="https://www.news9live.com/images/placeholder.jpg" alt=""></a>
+                                </div>
+                                <figcaption>
+                                    <a href="">Adityanath hints at changing Azamgarh's name to 'Aryamgarh', Akhilesh
+                                        hits back with 'illiterate' jab</a>
+                                </figcaption>
+                            </figure>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- for demo purpose only -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- --------------------- -->
+    <script src="js/d3.v4.min.js"></script>
+    <script src="js/topojson.v2.min.js"></script>
+    <script src="js/functions.js"></script>
+    <script src="js/d3-tip.js"></script>
+    <!--used with topojson map-->
+    <!-- Used with Constituency Jump List and alphabet Filter -->
+    <script src="assets/data/const-list.js"></script>
+    <script src="js/constituency-jump-list.js"></script>
+    <!-- Used with Constituency Jump List and alphabet Filter -->
+    <script src="assets/data/cand-list.js"></script>
+    <script src="js/progressiveMenu.js"></script>
+    <script src="js/map-party.js"></script>
+    <script src="js/accordion-table.js"></script>
+    <script>
+        var chosenState = "up";
+        var chosenCand = 1;
+
+        var fdListA = constList[chosenState].filter(function (obj) {
+            return obj.constName[0] === "A";
+        })
+        constituencuJumpList(fdListA)
+
+        progressiveMenu(candList[chosenState], 'candidate_search_list', "candidate", "candName");
+
+        var candidate_api = (function () {
+            candidate_api = null;
+            jQuery.ajax({
+                'async': false,
+                'global': false,
+                'dataType': 'json',
+                'cache': false,
+                'url': 'assets/data/dataset-candidate.json',
+                'success': function (partydata) {
+                    candidate_api = partydata;
+
+                }
+            });
+            return candidate_api;
+        })();
+
+        var candData = candidate_api[chosenState].filter(function (obj) {
+            return obj["id"] == chosenCand;
+        });
+
+        document.getElementById("candidateName").innerHTML = candData[0]["name"];
+        document.getElementById("candidateIntro").innerHTML = candData[0]["intro"];
+        document.getElementById("candidateImg").src = candData[0]["pic"];
+        document.getElementById("constName").innerHTML = candData[0]["constituency"];
+        document.getElementById("stateName").innerHTML = candData[0]["state"];
+        document.getElementById("candAge").innerHTML = candData[0]["age"];
+        document.getElementById("seatType").innerHTML = candData[0]["seat-type"];
+        document.getElementById("candCases").innerHTML = candData[0]["criminalcases"];
+        document.getElementById("candEdu").innerHTML = candData[0]["education"];
+        document.getElementById("candAssets").innerHTML = candData[0]["total-assets"];
+        document.getElementById("candLiability").innerHTML = candData[0]["total-liabilities"];
+    </script>
+    <script>
+        function create_custom_dropdowns() {
+            $('select').each(function (i, select) {
+                if (!$(this).next().hasClass('dropdown-select')) {
+                    $(this).after('<div class="dropdown-select wide ' + ($(this).attr('class') || '') +
+                        '" tabindex="0"><span class="current"></span><div class="list"><ul></ul></div></div>'
+                    );
+                    var dropdown = $(this).next();
+                    var options = $(select).find('option');
+                    var selected = $(this).find('option:selected');
+                    dropdown.find('.current').html(selected.data('display-text') || selected.text());
+                    options.each(function (j, o) {
+                        var display = $(o).data('display-text') || '';
+                        dropdown.find('ul').append('<li class="option ' + ($(o).is(':selected') ?
+                            'selected' : '') + '" data-value="' + $(o).val() +
+                            '" data-display-text="' + display + '">' + $(o).text() + '</li>');
+                    });
+                }
+            });
+
+            $('.dropdown-select ul').before(
+                '<div class="dd-search"><input id="txtSearchValue" autocomplete="off" onkeyup="filter()" class="dd-searchbox" type="text"></div>'
+            );
+        }
+
+        // Event listeners
+
+        // Open/close
+        $(document).on('click', '.dropdown-select', function (event) {
+            if ($(event.target).hasClass('dd-searchbox')) {
+                return;
+            }
+            $('.dropdown-select').not($(this)).removeClass('open');
+            $(this).toggleClass('open');
+            if ($(this).hasClass('open')) {
+                $(this).find('.option').attr('tabindex', 0);
+                $(this).find('.selected').focus();
+            } else {
+                $(this).find('.option').removeAttr('tabindex');
+                $(this).focus();
+            }
+        });
+
+        // Close when clicking outside
+        $(document).on('click', function (event) {
+            if ($(event.target).closest('.dropdown-select').length === 0) {
+                $('.dropdown-select').removeClass('open');
+                $('.dropdown-select .option').removeAttr('tabindex');
+            }
+            event.stopPropagation();
+        });
+
+        function filter() {
+            var valThis = $('#txtSearchValue').val();
+            $('.dropdown-select ul > li').each(function () {
+                var text = $(this).text();
+                (text.toLowerCase().indexOf(valThis.toLowerCase()) > -1) ? $(this).show() : $(this).hide();
+            });
+        };
+        // Search
+
+        // Option click
+        $(document).on('click', '.dropdown-select .option', function (event) {
+            $(this).closest('.list').find('.selected').removeClass('selected');
+            $(this).addClass('selected');
+            var text = $(this).data('display-text') || $(this).text();
+            $(this).closest('.dropdown-select').find('.current').text(text);
+            $(this).closest('.dropdown-select').prev('select').val($(this).data('value')).trigger('change');
+        });
+
+        // Keyboard events
+        $(document).on('keydown', '.dropdown-select', function (event) {
+            var focused_option = $($(this).find('.list .option:focus')[0] || $(this).find(
+                '.list .option.selected')[0]);
+            // Space or Enter
+            //if (event.keyCode == 32 || event.keyCode == 13) {
+            if (event.keyCode == 13) {
+                if ($(this).hasClass('open')) {
+                    focused_option.trigger('click');
+                } else {
+                    $(this).trigger('click');
+                }
+                return false;
+                // Down
+            } else if (event.keyCode == 40) {
+                if (!$(this).hasClass('open')) {
+                    $(this).trigger('click');
+                } else {
+                    focused_option.next().focus();
+                }
+                return false;
+                // Up
+            } else if (event.keyCode == 38) {
+                if (!$(this).hasClass('open')) {
+                    $(this).trigger('click');
+                } else {
+                    var focused_option = $($(this).find('.list .option:focus')[0] || $(this).find(
+                        '.list .option.selected')[0]);
+                    focused_option.prev().focus();
+                }
+                return false;
+                // Esc
+            } else if (event.keyCode == 27) {
+                if ($(this).hasClass('open')) {
+                    $(this).trigger('click');
+                }
+                return false;
+            }
+        });
+
+        $(document).ready(function () {
+            create_custom_dropdowns();
+        });
+    </script>
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".partySwiper", {
+                slidesPerView: 2.5,
+                spaceBetween: 30,
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false,
+                },
+                loop: true,
+                breakpoints: {
+                    640: {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
+                    },
+                    768: {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
+                    },
+                    1024: {
+                        slidesPerView: 6,
+                        spaceBetween: 30,
+                    },
+                },
+            });
+        var swiper = new Swiper(".candidateSwiper", {
+            slidesPerView: 2.5,
+            spaceBetween: 30,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            loop: true,
+            breakpoints: {
+                640: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+                1024: {
+                    slidesPerView: 6,
+                    spaceBetween: 30,
+                },
+            },
+        });
+    </script>
+</body>
+
+</html>
