@@ -14567,7 +14567,7 @@ p.elec_subheading {color: #676767; font-size: 14px;}
                         <img src="images/parath.jpg" class="gm-lazy gm-observing gm-observing-cb">
                         <h2><a href=""><small>#</small>UPProjections <span>With PARTHA DAS</span></a></h2>
                      </div>
-                     <p class="elec_subheading">News9 Poll Predictor</p>
+                     <p class="elec_subheading">Projections based on current round</p>
                   </div>
                   <ul class="flex">
                      <li>
@@ -14585,8 +14585,8 @@ p.elec_subheading {color: #676767; font-size: 14px;}
                               </div>
                            </div>
                            <div class="partyStatus">
-                              <p>Status: <span>leads by 12,000 votes</span></p>
-                              <p>News9 prediction: <span>will win by 1,87,000 votes</span></p>
+                              <p>Status: <span>Leads by 12,000 votes</span></p>
+                              <p>News9 prediction: <span>Will win by 1,87,000 votes</span></p>
                            </div>
                         </div>
                         <div class="PR_detail">
@@ -14609,8 +14609,8 @@ p.elec_subheading {color: #676767; font-size: 14px;}
                               </div>
                            </div>
                            <div class="partyStatus">
-                              <p>Status: <span>leads by 12,000 votes</span></p>
-                              <p>News9 prediction: <span>will win by 1,87,000 votes</span></p>
+                              <p>Status: <span>Leads by 12,000 votes</span></p>
+                              <p>News9 prediction: <span>Will win by 1,87,000 votes</span></p>
                            </div>
                         </div>
                         <div class="PR_detail">
@@ -14633,8 +14633,8 @@ p.elec_subheading {color: #676767; font-size: 14px;}
                               </div>
                            </div>
                            <div class="partyStatus">
-                              <p>Status: <span>leads by 12,000 votes</span></p>
-                              <p>News9 prediction: <span>will win by 1,87,000 votes</span></p>
+                              <p>Status: <span>Leads by 12,000 votes</span></p>
+                              <p>News9 prediction: <span>Will win by 1,87,000 votes</span></p>
                            </div>
                         </div>
                         <div class="PR_detail">
@@ -14723,14 +14723,15 @@ p.elec_subheading {color: #676767; font-size: 14px;}
                   
                      <div class="model_inner">
                         <button id="closePredictionMethod">X</button>
-                        <h3>Methodology</h3>
-                        <p> Methodology text goes here</p>
+                        <h3>How we compute projections</h3>
+                        <p> News9 psephologist Partha Das uses three parameters to project winners: 1. Comparing round, booth-wise trends with 2017
+                        results; 2. Analysing vote swing in those booths, and; 3. Projecting those swings onto 2022 results</p>
                      </div>
                   
                   </div>
 
                   <div id="prediction-goto">
-                     <button id="prediction-method">Methodology</button>
+                     <button id="prediction-method">How we compute projections</button>
                      <div class="moreProjec">
                         <a href="" class=""><span>All UP Projections </span></a>
                      </div>
@@ -15813,13 +15814,58 @@ p.elec_subheading {color: #676767; font-size: 14px;}
                      .Election_widget a{
                         color: #FFF;
                      }
+                     .Election_widget .promoPollpedia{
+                        /* background-image: url('images/promo/reference.jpg'); */
+                        background-image: url('images/promo/pollpedia-promo-bg.png');
+                        width: 300px;
+                        height: 482px;
+                        background-repeat: no-repeat;
+                        padding: 10px;
+                        text-align: center;
+                     }
+                     .Election_widget .promoPollpedia .promoHeader{
+                        margin: 3px auto 20px auto;
+                     }
+                     .Election_widget .promoPollpedia .promoBody{
+                        display: flex;
+                        flex-wrap: wrap;
+                        column-gap: 7px;
+                        row-gap: 7px;
+                        justify-content: center;
+                        margin-bottom:25px ;
+                     }
+
+                     .Election_widget .promoPollpedia .promoFooter{
+                        margin: 0 auto 0 auto;
+                     }
 
                   </style>
                   
                   <div class="Election_widget">
-                     <a href="#">
+                     <!-- <a href="#">
                         <img src="images/promo.jpg" alt="">
-                     </a>
+                     </a> -->
+                     <div class="promoPollpedia">
+                        <img class="promoHeader" src="images/promo/pollpedia-promo-1.png" />
+                        <div class="promoBody">
+                           <a href="https://www.news9live.com/elections/punjab-assembly-election-2022">
+                              <img src="images/promo/pollpedia-promo-2.png" />
+                           </a>
+                           <a href="https://www.news9live.com/elections/uttarakhand-assembly-election-2022">
+                              <img src="images/promo/pollpedia-promo-3.png" />
+                           </a>
+                           <a href="https://www.news9live.com/elections/manipur-assembly-election-2022">
+                              <img src="images/promo/pollpedia-promo-4.png" />
+                           </a>
+                           <a href="https://www.news9live.com/elections/uttar-pradesh-assembly-election-2022">
+                              <img src="images/promo/pollpedia-promo-5.png" />
+                           </a>
+                           <a href="https://www.news9live.com/elections/goa-assembly-election-2022">
+                              <img src="images/promo/pollpedia-promo-6.png" />
+                           </a>
+                        </div>
+                        <img class="promoFooter" src="images/promo/pollpedia-promo-7.png" />
+                     </div>
                   </div>
                   <!---==================================--->
                   <!---- end of ELection widget -->
@@ -15866,43 +15912,13 @@ p.elec_subheading {color: #676767; font-size: 14px;}
                         <div class="swiper-container">
                            <ul class=" swiper-wrapper">
                               <li class="swiper-slide">
-                                 <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay"
-                                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/465931509&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-                                 <div
-                                    style="font-size: 10px; color: #fff;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
-                                    <a href="https://soundcloud.com/tv9telugulive" title="tv9telugulive" target="_blank"
-                                       style="color: #fff; text-decoration: none;">tv9telugulive</a> · <a
-                                       href="https://soundcloud.com/tv9telugulive/sets/4-minutes-24-headlines-top"
-                                       title="4 minutes 24 Headlines - Top Trending NEWS Headlines By TV9" target="_blank"
-                                       style="color: #fff; text-decoration: none;">4 minutes 24 Headlines - Top Trending NEWS Headlines By
-                                       TV9</a>
-                                 </div>
+                                 <iframe src="https://open.spotify.com/embed/show/27FFOmO9WLuizIarUi7DxZ" width="100%" height="232" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
                               </li>
                               <li class="swiper-slide">
-                                 <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay"
-                                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/465931509&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-                                 <div
-                                    style="font-size: 10px; color: #fff;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
-                                    <a href="https://soundcloud.com/tv9telugulive" title="tv9telugulive" target="_blank"
-                                       style="color: #fff; text-decoration: none;">tv9telugulive</a> · <a
-                                       href="https://soundcloud.com/tv9telugulive/sets/4-minutes-24-headlines-top"
-                                       title="4 minutes 24 Headlines - Top Trending NEWS Headlines By TV9" target="_blank"
-                                       style="color: #fff; text-decoration: none;">4 minutes 24 Headlines - Top Trending NEWS Headlines By
-                                       TV9</a>
-                                 </div>
+                                 <iframe src="https://open.spotify.com/embed/show/27FFOmO9WLuizIarUi7DxZ" width="100%" height="232" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
                               </li>
                               <li class="swiper-slide">
-                                 <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay"
-                                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/465931509&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-                                 <div
-                                    style="font-size: 10px; color: #fff;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
-                                    <a href="https://soundcloud.com/tv9telugulive" title="tv9telugulive" target="_blank"
-                                       style="color: #fff; text-decoration: none;">tv9telugulive</a> · <a
-                                       href="https://soundcloud.com/tv9telugulive/sets/4-minutes-24-headlines-top"
-                                       title="4 minutes 24 Headlines - Top Trending NEWS Headlines By TV9" target="_blank"
-                                       style="color: #fff; text-decoration: none;">4 minutes 24 Headlines - Top Trending NEWS Headlines By
-                                       TV9</a>
-                                 </div>
+                                 <iframe src="https://open.spotify.com/embed/show/27FFOmO9WLuizIarUi7DxZ" width="100%" height="232" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
                               </li>
                            </ul>
                         </div>
